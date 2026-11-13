@@ -1,0 +1,57 @@
+{
+  "name": "bootstra-rustomancy",
+  "version": "0.2.0",
+  "description": "A post-atomic, retro-futurist pixel-art theme for Bootstrap 5.3: crumpled paper, marker scrawl, riveted rusty panels, lamp buttons and green phosphor screens.",
+  "themeCollection": {
+    "id": "bootstra-rustomancy",
+    "name": "Rustomancy",
+    "description": "Post-atomic pixel art: crumpled paper and marker scrawl for websites, riveted rusty panels, lamp buttons and phosphor screens for game UI.",
+    "demo": "_site",
+    "preview": "docs/hero.png"
+  },
+  "style": "dist/rustomancy.css",
+  "main": "dist/rustomancy.css",
+  "files": [
+    "dist/",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "stylelint \"src/**/*.css\" && node --check src/rustomancy.js && node --check demo/demo.js",
+    "test": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "bootstrap",
+    "bootstrap5",
+    "theme",
+    "css",
+    "retro",
+    "pixel-art",
+    "post-apocalyptic",
+    "game-ui",
+    "rustomancy"
+  ],
+  "author": "Artem Bloschinsky",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bloschinsky/bootstra-themes.git",
+    "directory": "packages/bootstra-rustomancy"
+  },
+  "homepage": "https://bloschinsky.github.io/bootstra-themes/themes/bootstra-rustomancy/",
+  "bugs": {
+    "url": "https://github.com/bloschinsky/bootstra-themes/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "bootstrap": "^5.3.0"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.33.0",
+    "stylelint": "^17.16.0",
+    "stylelint-config-recommended": "^18.0.0"
+  }
+}

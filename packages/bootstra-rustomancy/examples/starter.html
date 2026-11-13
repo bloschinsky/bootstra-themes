@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-phosphor="green">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RUSTOMANCY starter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Permanent+Marker&family=Reenie+Beanie&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../dist/rustomancy.css">
+</head>
+<body>
+
+<!-- wooden spine + taped note navigation (optional) -->
+<div class="rm-spine" aria-hidden="true"></div>
+<div class="rm-rail">
+  <div class="rm-note-wrap">
+    <span class="rm-tape" style="left:48px;top:-8px"></span>
+    <div class="rm-note">
+      <nav aria-label="Sections">
+        <a href="#top"><span class="px">Home</span></a>
+        <a href="#log"><span class="px">Log</span></a>
+      </nav>
+    </div>
+  </div>
+  <a class="rm-sticky" href="#log"><span class="px" data-text="Read|this!">Read this!</span></a>
+</div>
+
+<main class="rm-main" id="top">
+  <h1 class="rm-scrawl px">My Wasteland Page</h1>
+  <p class="rm-sub">A paper page built with RUSTOMANCY</p>
+
+  <div class="row g-4 mt-2">
+    <div class="col-6 col-md-4 text-center">
+      <canvas class="px-photo mx-auto" data-scene="dunes" data-w="104" data-h="72"></canvas>
+      <p class="rm-caption">Out by the highway</p>
+    </div>
+    <div class="col-6 col-md-4 text-center">
+      <canvas class="px-photo mx-auto" data-scene="tower" data-w="104" data-h="72"></canvas>
+      <p class="rm-caption">The radio tower</p>
+    </div>
+  </div>
+
+  <p class="mt-4">Built <span class="rm-fix"><s>quickly</s><span class="px">carefully</span></span>.</p>
+
+  <section id="log" class="rm-surface-metal rm-band">
+    <h2 class="rm-title-metal">Terminal</h2>
+    <div class="rm-panel mt-3">
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <span class="rm-plate">Status</span>
+        <span class="rm-drum rm-drum-red" id="hp"></span>
+      </div>
+      <div class="rm-crt mb-3">&gt; ALL SYSTEMS NOMINAL<br><span class="dim">&gt; Geiger: 12 rads/h</span></div>
+      <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="c1" checked><label class="form-check-label rm-label" for="c1">Fog of war</label></div>
+      <button class="btn btn-rm btn-rm-led" id="hit">Take damage</button>
+      <button class="btn btn-rm" data-set-scan="off">Scanlines off</button>
+      <button class="btn btn-rm" data-set-scan="on">Scanlines on</button>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../dist/rustomancy.js"></script>
+<script>
+  let hp = 43;
+  const el = document.getElementById('hp');
+  Rustomancy.drum(el, hp, 3);
+  document.getElementById('hit').onclick = () => Rustomancy.drum(el, hp = Math.max(0, hp - 7), 3);
+</script>
+</body>
+</html>

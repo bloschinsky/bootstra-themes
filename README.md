@@ -10,6 +10,7 @@
 | **P31**: a research terminal on a P31 phosphor CRT | [`bootstra-p31`](https://www.npmjs.com/package/bootstra-p31) | [README](packages/bootstra-p31/README.md) | [▶ Live demo](https://bloschinsky.github.io/bootstra-themes/themes/bootstra-p31/) |
 | **IRIX**: the Indigo Magic desktop of early-90s SGI workstations | [`bootstra-irix`](https://www.npmjs.com/package/bootstra-irix) | [README](packages/bootstra-irix/README.md) | [▶ Live demo](https://bloschinsky.github.io/bootstra-themes/themes/bootstra-irix/) |
 | **Gunmetal**: Flash-era desktops with steel windows and a switchable glow | [`bootstra-gunmetal`](https://www.npmjs.com/package/bootstra-gunmetal) | [README](packages/bootstra-gunmetal/README.md) | [▶ Live demo](https://bloschinsky.github.io/bootstra-themes/themes/bootstra-gunmetal/) |
+| **Rustomancy**: post-atomic pixel art for game sites and in-game UI | [`bootstra-rustomancy`](https://www.npmjs.com/package/bootstra-rustomancy) | [README](packages/bootstra-rustomancy/README.md) | [▶ Live demo](https://bloschinsky.github.io/bootstra-themes/themes/bootstra-rustomancy/) |
 
 Browse them all on the **[collection site](https://bloschinsky.github.io/bootstra-themes/)**. Install and usage instructions live in each theme's README.
 

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en" data-phosphor="green">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RUSTOMANCY 0.2 — a post-atomic Bootstrap 5 theme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Permanent+Marker&family=Reenie+Beanie&family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="dist/rustomancy.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✋</text></svg>">
+</head>
+<body>
+
+<div class="rm-spine" aria-hidden="true"></div>
+
+<div class="rm-rail">
+  <div class="rm-note-wrap">
+    <span class="rm-tape" style="left:48px;top:-8px"></span>
+    <div class="rm-note" id="note">
+      <nav aria-label="Sections">
+        <a href="#top"><span class="px">Home</span></a>
+        <a href="#paper"><span class="px">Paper</span></a>
+        <a href="#iron"><span class="px">Iron</span></a>
+        <a href="#supplies"><span class="px">Supplies</span></a>
+        <a href="#tokens"><span class="px">Tokens</span></a>
+      </nav>
+    </div>
+  </div>
+  <button type="button" class="rm-sticky" data-bs-toggle="modal" data-bs-target="#palm"><span class="px" data-text="Read my|palm!">Read my palm!</span></button>
+  <a class="rm-sticky" href="#iron"><span class="px">Demo!</span></a>
+</div>
+
+<main class="rm-main" id="top">
+
+  <div class="rm-panel rm-control" role="group" aria-label="Theme">
+    <span class="rm-label-sm">Phosphor</span>
+    <div class="btn-group">
+      <button class="btn btn-rm" data-set-phos="green">Grn</button>
+      <button class="btn btn-rm" data-set-phos="amber">Amb</button>
+      <button class="btn btn-rm" data-set-phos="cyan">Cyn</button>
+    </div>
+    <span class="rm-label-sm">Light</span>
+    <div class="btn-group">
+      <button class="btn btn-rm" data-set-theme="auto">Auto</button>
+      <button class="btn btn-rm" data-set-theme="light">Day</button>
+      <button class="btn btn-rm" data-set-theme="dark">Night</button>
+    </div>
+    <span class="rm-label-sm">Ground</span>
+    <div class="btn-group">
+      <button class="btn btn-rm" data-set-ground="paper">Paper</button>
+      <button class="btn btn-rm" data-set-ground="sand">Sand</button>
+      <button class="btn btn-rm" data-set-ground="cracked">Dry</button>
+    </div>
+    <span class="rm-label-sm">Scanlines</span>
+    <div class="btn-group">
+      <button class="btn btn-rm" data-set-scan="on">On</button>
+      <button class="btn btn-rm" data-set-scan="off">Off</button>
+    </div>
+  </div>
+
+  <h1 class="visually-hidden">Life Line — a post-atomic role-playing game</h1>
+  <div class="rm-logo" aria-hidden="true"><canvas id="logo"></canvas></div>
+
+  <p class="rm-lede"><b>Wasteland bulletin:</b> the demo is finally up for download. We opened a separate board for your complaints and bug reports (real bugs too). The full game keeps crawling forward: some movies, sound and a couple of towns are still missing, but it already gives you the right idea. The fortune teller at the Rust Market says we'll ship on time. We don't believe her. — 12 Oct 2026</p>
+
+  <div class="mt-4">
+    <a class="rm-entry" href="#paper"><canvas class="px-photo" data-scene="vault" data-w="64" data-h="44"></canvas>
+      <span><h2 class="rm-scrawl px">The Bunker</h2><p class="rm-sub">About the game and its world</p></span></a>
+    <a class="rm-entry" href="#paper"><canvas class="px-photo" data-scene="dunes" data-w="64" data-h="44"></canvas>
+      <span><h2 class="rm-scrawl px">Dust &amp; Ash</h2><p class="rm-sub">Frequently asked questions</p></span></a>
+    <a class="rm-entry" href="#team"><canvas class="px-photo" data-scene="crew" data-w="64" data-h="44"></canvas>
+      <span><h2 class="rm-scrawl px">Seers</h2><p class="rm-sub">Meet the development team</p></span></a>
+    <a class="rm-entry" href="#shots"><canvas class="px-photo" data-scene="tower" data-w="64" data-h="44"></canvas>
+      <span><h2 class="rm-scrawl px">Snapshots</h2><p class="rm-sub">The view from the radio tower</p></span></a>
+    <a class="rm-entry" href="#board"><canvas class="px-photo" data-scene="market" data-w="64" data-h="44"></canvas>
+      <span><h2 class="rm-scrawl px">The Board</h2><p class="rm-sub">Complaints, wishes and letters</p></span></a>
+  </div>
+
+  <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mt-4">
+    <p class="rm-fine mb-0" style="max-width:62ch">This site is best viewed with Netscape Navigator 3.0 at 800x600 or higher. If anything looks off, make your browser window bigger or hit the monitor. All names and faces are property of their fictional owners.</p>
+    <span class="rm-ratingbox" aria-label="Rated 18 plus"><b>18</b>IRRADIATED<br>ADULTS</span>
+  </div>
+  <p class="rm-motto">MADE BY <span class="rm-fix"><s>HUMANS</s><span class="px">survivors</span></span>. FOR <span class="rm-fix"><s>HUMANS</s><span class="px">survivors</span></span>.</p>
+
+  <!-- ======= PAPER ======= -->
+  <section id="paper" class="pt-5">
+    <h2 class="rm-scrawl px">Paper</h2>
+    <p class="rm-sub">Pieces for websites, fan pages and in-game journals</p>
+
+    <div id="shots" class="row g-4 mt-1">
+      <div class="col-6 col-lg-4 text-center"><canvas class="px-photo mx-auto" data-scene="dunes" data-w="104" data-h="72"></canvas><p class="rm-caption">Out by the old highway (150k)</p></div>
+      <div class="col-6 col-lg-4 text-center"><canvas class="px-photo mx-auto" data-scene="market" data-w="104" data-h="72"></canvas><p class="rm-caption">Rust Market at night (198k)</p></div>
+      <div class="col-6 col-lg-4 text-center"><canvas class="px-photo mx-auto" data-scene="vault" data-w="104" data-h="72"></canvas><p class="rm-caption">What's behind this door? (31k)</p></div>
+    </div>
+    <p class="rm-fine fst-italic mt-2">Feel free to copy these screenshots for private use, as long as the caption stays on. Everything may change before release, especially the parts you like.</p>
+
+    <h3 id="team" class="rm-scrawl rm-scrawl-sm px mt-5">Core team</h3>
+    <div class="row g-4 mt-1">
+      <div class="col-md-6">
+        <p class="rm-sign px">Alex Soot</p>
+        <p class="rm-role">Project Lead</p>
+        <p>Alex runs the project and writes the engine. That means he manages himself and, sometimes, the rest of us. He says he can see the ship date on his fate line. We see a coffee stain.</p>
+      </div>
+      <div class="col-md-6">
+        <p class="rm-sign px">Marta Bolt</p>
+        <p class="rm-role">Interface Artist</p>
+        <p>Marta drew every rivet on these panels. Twice. She thinks rust should look warm, not dirty, and explains this to anyone who wanders into her dark room.</p>
+      </div>
+      <div class="col-12 text-center">
+        <canvas class="px-photo mx-auto" data-scene="duo" data-w="150" data-h="84"></canvas>
+        <p class="rm-caption">Alex Soot, Marta Bolt</p>
+      </div>
+    </div>
+
+    <div id="board" class="row g-4 mt-4 align-items-start">
+      <div class="col-lg-7">
+        <div class="card rm-card-paper"><div class="card-body">
+          <h3 class="rm-scrawl rm-scrawl-sm px mb-3">Complaint board</h3>
+          <div class="mb-3"><label class="form-label" for="f-name">Your wasteland name</label><input id="f-name" class="form-control rm-input-paper" placeholder="Wolf from the Backwater"></div>
+          <div class="mb-3"><label class="form-label" for="f-msg">What happened</label><textarea id="f-msg" rows="2" class="form-control rm-input-paper" placeholder="A mutant got stuck in a door and is crying"></textarea></div>
+          <div class="form-check mb-3"><input class="form-check-input rm-paper-check" type="checkbox" id="f-human" checked><label class="form-check-label" for="f-human">I am not a mutant (or I am, but a polite one)</label></div>
+          <button class="btn btn-scrawl" type="button" id="f-send">Send complaint</button>
+        </div></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="alert alert-paper" role="note">Heads up! The demo does not keep your save after your character dies. Neither does life.</div>
+        <p class="mt-3">We fix typos <span class="rm-fix"><s>in the code</s><span class="px">with a marker</span></span>, right on the page.</p>
+        <div class="d-flex gap-4 align-items-center mt-3 flex-wrap">
+          <span class="rm-stamp">Approved<small>Dept. of Fate</small></span>
+          <span class="badge rm-badge-ink">new!</span>
+          <button class="btn btn-sticky" type="button" data-bs-toggle="modal" data-bs-target="#palm">Fortune</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= IRON ======= -->
+  <section id="iron" class="rm-surface-metal rm-band">
+    <h2 class="rm-title-metal">Iron</h2>
+    <p class="rm-copy-metal mb-4">The game's own interface: riveted panels, lamp buttons, green screens and drum counters. Everything below works. Press things.</p>
+
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="rm-panel h-100 d-grid gap-3 align-content-start">
+          <button class="btn btn-rm btn-rm-xl" type="button"><span class="rm-led rm-led-xl"></span><span>New game</span></button>
+          <button class="btn btn-rm btn-rm-xl" type="button"><span class="rm-led rm-led-xl"></span><span>Load game</span></button>
+          <button class="btn btn-rm btn-rm-xl" type="button" data-bs-toggle="modal" data-bs-target="#palm"><span class="rm-led rm-led-xl"></span><span>Palmist</span></button>
+          <button class="btn btn-rm btn-rm-xl" type="button"><span class="rm-led rm-led-xl"></span><span>Credits</span></button>
+          <button class="btn btn-rm btn-rm-xl" type="button"><span class="rm-led rm-led-xl"></span><span>Exit</span></button>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="rm-panel h-100">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <span class="rm-plate">Receiver setup</span>
+            <span class="rm-crt rm-crt-chip">MODE: <span id="res-mode">1</span></span>
+          </div>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="rm-well">
+                <p class="rm-label mb-2">Resolution</p>
+                <div class="d-flex gap-2">
+                  <div class="rm-crt flex-grow-1" style="min-height:130px"><ul class="rm-crt-list" id="res-list" role="listbox" aria-label="Resolution"></ul></div>
+                  <div class="d-flex flex-column gap-2">
+                    <button class="btn btn-rm btn-rm-xs" data-res="-1" aria-label="Up">▲</button>
+                    <button class="btn btn-rm btn-rm-xs" data-res="1" aria-label="Down">▼</button>
+                  </div>
+                </div>
+                <div class="form-check mt-3 mb-0"><input class="form-check-input" type="checkbox" id="c-x2" checked><label class="form-check-label rm-label" for="c-x2">Scale x2</label></div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="rm-well text-center">
+                <p class="rm-label">Palette</p>
+                <div class="rm-knob-wrap" id="knob-wrap">
+                  <span style="left:0;top:66px" data-k="0">8 bit</span>
+                  <span style="left:62px;top:0" data-k="1">16 bit</span>
+                  <span style="right:0;top:66px" data-k="2">32 bit</span>
+                  <button class="rm-knob" id="knob" aria-label="Palette"></button>
+                </div>
+                <p class="rm-label mt-1 mb-2">Refresh</p>
+                <div class="d-inline-flex align-items-center gap-2">
+                  <button class="btn btn-rm btn-rm-xs" data-hz="-1" aria-label="Lower">◀</button>
+                  <span class="rm-drum" id="hz"></span><span class="rm-label">Hz</span>
+                  <button class="btn btn-rm btn-rm-xs" data-hz="1" aria-label="Higher">▶</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-check"><input class="form-check-input" type="checkbox" id="c-fog" checked><label class="form-check-label rm-label" for="c-fog">Fog of war</label></div>
+              <label class="rm-label-sm d-block mt-3" for="r-fog">Fog visibility</label>
+              <input type="range" class="form-range rm-range" id="r-fog" min="0" max="100" value="45">
+              <div class="rm-range-scale"><span>Dark</span><span>Bright</span></div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-check"><input class="form-check-input" type="checkbox" id="c-noise"><label class="form-check-label rm-label" for="c-noise">Radio static</label></div>
+              <label class="rm-label-sm d-block mt-3" for="r-vol">Volume</label>
+              <input type="range" class="form-range rm-range" id="r-vol" min="0" max="100" value="70">
+              <div class="rm-range-scale"><span>Silent</span><span>Siren</span></div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end gap-2 mt-3">
+            <button class="btn btn-rm btn-rm-led">Cancel</button>
+            <button class="btn btn-rm btn-rm-led">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rm-panel mt-4">
+      <div class="d-flex flex-wrap gap-2 mb-3 align-items-center">
+        <span class="rm-plate">Vic Ashby</span><span class="rm-plate">Age 31</span><span class="rm-plate">Male</span>
+        <span class="ms-auto d-flex align-items-center gap-2"><span class="rm-label">Free marks</span><span class="rm-drum rm-drum-lg" id="free"></span></span>
+      </div>
+      <div class="rm-sheet">
+        <div>
+          <p class="rm-label-sm mb-2">Lines of the palm</p>
+          <div id="stats"></div>
+          <div class="rm-crt mt-3" id="lvl"></div>
+        </div>
+        <div class="d-grid gap-3 align-content-start">
+          <div class="rm-crt" id="status"></div>
+          <div class="rm-crt" id="derived"></div>
+        </div>
+        <div class="rm-sheet-skills d-grid gap-3 align-content-start">
+          <div class="rm-crt">
+            <div class="d-flex justify-content-between"><span>SKILLS</span><span class="dim">UP/DN</span></div>
+            <hr>
+            <ul class="rm-crt-list" id="skills" role="listbox" aria-label="Skills"></ul>
+          </div>
+          <div class="rm-dossier" id="dossier" aria-live="polite"><span class="px" id="dossier-title">Palmistry</span><b id="dossier-val"></b><p id="dossier-text"></p></div>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs rm-tabs mt-4" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t-signs" type="button" role="tab">Signs</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-karma" type="button" role="tab">Karma</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-scars" type="button" role="tab">Scars</button></li>
+      </ul>
+      <div class="tab-content rm-crt" style="min-height:96px">
+        <div class="tab-pane show active" id="t-signs" role="tabpanel">Iron Hide (1)<br>Fast Mending (2)<br><span class="dim">Second Heart - locked until level 12</span></div>
+        <div class="tab-pane" id="t-karma" role="tabpanel">Karma: 125 - respected among survivors<br>Friend of the Rust Market<br><span class="dim">Enemy of the Sewer Brothers</span></div>
+        <div class="tab-pane" id="t-scars" role="tabpanel">Giant rats: 31<br>Raiders: 6<br>Merchants: 1 <span class="dim">(accident)</span></div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-end gap-2 mt-3">
+        <button class="btn btn-rm btn-rm-led">Print</button>
+        <button class="btn btn-rm btn-rm-led" id="save-btn">Save</button>
+        <button class="btn btn-rm btn-rm-led">Cancel</button>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-md-5 col-lg-4">
+        <div class="rm-panel">
+          <div class="text-center mb-3"><span class="rm-plate">Toolkit</span></div>
+          <div class="d-grid gap-2" id="tools"></div>
+          <div class="text-center mt-3"><button class="btn btn-rm btn-rm-led">Cancel</button></div>
+        </div>
+      </div>
+      <div class="col-md-7 col-lg-8 d-grid gap-4 align-content-start">
+        <div class="rm-panel">
+          <p class="rm-label mb-3">Palm-9 wrist unit</p>
+          <p class="rm-label-sm mb-2">Radiation - 340 rads</p>
+          <div class="progress rm-progress rm-progress-rad mb-3" role="progressbar" aria-label="Radiation" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:34%"></div></div>
+          <p class="rm-label-sm mb-2">Water - 4 days</p>
+          <div class="progress rm-progress mb-3" role="progressbar" aria-label="Water" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:62%"></div></div>
+          <p class="rm-label-sm mb-2">Faith in humanity</p>
+          <div class="progress rm-progress rm-progress-red" role="progressbar" aria-label="Faith" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:12%"></div></div>
+        </div>
+        <div class="alert alert-rm mb-0" role="alert"><b>Warning:</b> the counter is clicking faster. Stay away from the green lake.</div>
+        <div class="alert alert-rm alert-rm-danger mb-0" role="alert"><b>Alarm:</b> raiders at the south gate. The bunker is sealed.</div>
+      </div>
+    </div>
+
+    <div class="rm-panel rm-hud mt-4">
+      <div class="rm-crt" id="log" aria-live="polite"></div>
+      <div class="d-flex flex-column gap-2">
+        <button class="btn btn-rm btn-rm-xs" type="button">INV</button>
+        <div class="dropup">
+          <button class="btn btn-rm btn-rm-xs w-100" data-bs-toggle="dropdown" aria-expanded="false">OPT</button>
+          <ul class="dropdown-menu rm-menu">
+            <li><a class="dropdown-item" href="#iron">Save game</a></li>
+            <li><a class="dropdown-item" href="#iron">Load game</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#top">Back to site</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="rm-leds mb-2" id="ap" aria-label="Action points"></div>
+        <button class="rm-slot" id="slot" type="button">Pipe shotgun<b>AP 3 - fire</b></button>
+      </div>
+      <div class="rm-vitals"><span>HP</span><span class="rm-drum rm-drum-red" id="hp"></span><span>AC</span><span class="rm-drum" id="ac"></span></div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-rm btn-rm-xs" type="button" data-bs-toggle="modal" data-bs-target="#palm">FATE</button>
+        <button class="btn btn-rm btn-rm-led" type="button" id="end-turn">Turn</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SUPPLIES ======= -->
+  <section id="supplies" class="pt-5">
+    <h2 class="rm-scrawl px">Supplies</h2>
+    <p class="rm-sub">Stock Bootstrap components in both materials</p>
+    <div class="row g-4 mt-1">
+      <div class="col-lg-6">
+        <div class="rm-surface-metal rm-panel">
+          <p class="rm-label mb-3">Iron form</p>
+          <label class="form-label rm-label-sm" for="k1">Callsign</label>
+          <input id="k1" class="form-control rm-input-crt mb-3" placeholder="WOLF-7">
+          <label class="form-label rm-label-sm" for="k2">Faction</label>
+          <select id="k2" class="form-select rm-input-crt mb-3"><option>Rust Market</option><option>Bunker X-9</option><option>No faction</option></select>
+          <div class="d-flex flex-wrap gap-2 mb-3"><span class="badge rm-badge">Level 3</span><span class="badge rm-badge-crt">RAD 12%</span><span class="badge rm-badge">Mercenary</span></div>
+          <div class="list-group rm-list mb-3">
+            <button class="list-group-item list-group-item-action active" type="button">Butterfly knife - 1 AP</button>
+            <button class="list-group-item list-group-item-action" type="button">Pipe shotgun - 3 AP</button>
+            <button class="list-group-item list-group-item-action" type="button">Can of beans - 2 AP</button>
+          </div>
+          <div class="rm-crt p-0"><div class="rm-scroll"><table class="table table-hover rm-table-crt">
+            <thead><tr><th>Item</th><th>Caps</th><th>Wt</th></tr></thead>
+            <tbody><tr><td>Stimpack</td><td>175</td><td>0</td></tr><tr><td>Rad-Away</td><td>90</td><td>0</td></tr><tr><td>Leather jacket</td><td>320</td><td>15</td></tr></tbody>
+          </table></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card rm-card-paper mb-4"><div class="card-body">
+          <p class="rm-sign px mb-2">Market list</p>
+          <div class="form-check mb-1"><input class="form-check-input rm-paper-check" type="checkbox" id="l1" checked><label class="form-check-label" for="l1">Water filters</label></div>
+          <div class="form-check mb-1"><input class="form-check-input rm-paper-check" type="checkbox" id="l2"><label class="form-check-label" for="l2">10mm rounds (lots)</label></div>
+          <div class="form-check"><input class="form-check-input rm-paper-check" type="checkbox" id="l3" checked><label class="form-check-label" for="l3">Do NOT buy "mystery meat"</label></div>
+        </div></div>
+        <div class="rm-scroll"><table class="table rm-table-paper">
+          <thead><tr><th>Settlement</th><th>People</th><th>Water</th></tr></thead>
+          <tbody><tr><td>Backwater</td><td>48</td><td>clean</td></tr><tr><td>Rust Market</td><td>210</td><td>for caps</td></tr><tr><td>Bunker X-9</td><td>?</td><td>?</td></tr></tbody>
+        </table></div>
+        <div class="d-flex flex-wrap gap-3 mt-3">
+          <button class="btn btn-rm btn-rm-led" type="button" id="toast-btn">Show toast</button>
+          <button class="btn btn-scrawl" type="button" data-bs-toggle="modal" data-bs-target="#palm">Fortune</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TOKENS ======= -->
+  <section id="tokens" class="pt-5">
+    <h2 class="rm-scrawl px">Tokens</h2>
+    <p class="rm-sub">Colors, type and classes for building your own pages and screens</p>
+    <div class="row g-4 mt-1">
+      <div class="col-sm-6 col-lg-3">
+        <div class="rm-swatch"><i style="background:var(--rm-paper)"></i><span><b>--rm-paper</b><br>crumpled parchment</span></div>
+        <div class="rm-swatch"><i style="background:var(--rm-note)"></i><span><b>--rm-note</b><br>notebook sheet</span></div>
+        <div class="rm-swatch"><i style="background:var(--rm-sticky)"></i><span><b>--rm-sticky</b><br>sticky note</span></div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="rm-swatch"><i style="background:var(--rm-metal)"></i><span><b>--rm-metal</b><br>paint over rust</span></div>
+        <div class="rm-swatch"><i style="background:var(--rm-brass)"></i><span><b>--rm-brass</b><br>stamped lettering</span></div>
+        <div class="rm-swatch"><i style="background:#e2281b"></i><span><b>LED sprite</b><br>button lamp</span></div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="rm-swatch"><i style="background:var(--rm-phos)"></i><span><b>--rm-phos</b><br>screen phosphor</span></div>
+        <div class="rm-swatch"><i style="background:var(--rm-red)"></i><span><b>--rm-red</b><br>red marker</span></div>
+        <div class="rm-swatch"><i style="background:var(--rm-marker)"></i><span><b>--rm-marker</b><br>black marker</span></div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <p class="mb-0" style="font-family:var(--rm-font-marker);font-size:22px">Permanent Marker</p><p class="rm-fine">headings, pixelated by canvas</p>
+        <p class="mb-0" style="font-family:var(--rm-font-plate);font-size:30px;line-height:1">JERSEY 15</p><p class="rm-fine">plates, buttons</p>
+        <p class="mb-0" style="font-family:var(--rm-font-crt);font-size:22px">VT323</p><p class="rm-fine">screens, counters</p>
+        <p class="mb-0 rm-tiny" style="font-size:16px">Silkscreen</p><p class="rm-fine">tiny labels, 8px grid</p>
+      </div>
+    </div>
+    <div class="rm-scroll mt-3"><table class="table rm-table-paper">
+      <thead><tr><th>Class</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>.px</code></td><td>Renders the element's text at half size on a canvas, kills anti-aliasing, scales it back 2x. Real text stays for screen readers. Add <code>data-text="line|line"</code> for multi-line.</td></tr>
+        <tr><td><code>canvas.px-photo[data-scene]</code></td><td>Dithered pixel snapshot with torn white frame and album corners</td></tr>
+        <tr><td><code>.rm-spine</code> <code>.rm-rail</code> <code>.rm-main</code></td><td>Site frame: wooden spine with seals, taped note navigation, content column</td></tr>
+        <tr><td><code>.rm-note</code> <code>.rm-tape</code> <code>.rm-sticky</code></td><td>Lined sheet with a pixel-torn edge, tape, sticky note</td></tr>
+        <tr><td><code>.rm-scrawl</code> <code>.rm-sub</code> <code>.rm-sign</code> <code>.rm-role</code></td><td>Marker heading, bold italic subhead, signature, job title</td></tr>
+        <tr><td><code>.rm-fix</code> <code>.rm-stamp</code> <code>.rm-ratingbox</code></td><td>Struck word with marker correction, worn ink stamp, rating badge</td></tr>
+        <tr><td><code>.rm-surface-metal</code> <code>.rm-panel</code> <code>.rm-well</code></td><td>Rusted surface, riveted panel, sunken bay</td></tr>
+        <tr><td><code>.rm-plate</code> <code>.rm-label</code> <code>.rm-label-sm</code> <code>.rm-title-metal</code></td><td>Stamped plate, embossed label, 8px label, big iron heading</td></tr>
+        <tr><td><code>.btn-rm</code> <code>.btn-rm-led</code> <code>.btn-rm-xl</code> <code>.btn-rm-xs</code></td><td>Rusted bevel buttons, lamp button, menu button, nudge button</td></tr>
+        <tr><td><code>.btn-scrawl</code> <code>.btn-sticky</code></td><td>Marker-outlined and sticky-note buttons for paper</td></tr>
+        <tr><td><code>.rm-crt</code> <code>.rm-crt-list</code> <code>.rm-crt-chip</code></td><td>Scanlined screen, selectable list, small readout</td></tr>
+        <tr><td><code>.rm-drum</code> <code>.rm-drum-red</code> <code>.rm-drum-lg</code></td><td>Drum counter; set with <code>rm.drum(el, n, len)</code></td></tr>
+        <tr><td><code>.rm-paper-check</code> <code>.rm-range</code> <code>.rm-knob</code></td><td>Pixel red-X checkbox, slider, 3-frame rotary knob</td></tr>
+        <tr><td><code>.rm-tabs</code> <code>.rm-leds</code> <code>.rm-hud</code> <code>.rm-slot</code></td><td>Stepped tabs, lamp strip, bottom game bar, item slot</td></tr>
+        <tr><td><code>.alert-rm</code> <code>.rm-badge</code> <code>.rm-progress</code> <code>.rm-menu</code> <code>.rm-list</code></td><td>Skins for stock alert, badge, progress, dropdown, list-group</td></tr>
+        <tr><td><code>html[data-phosphor]</code> <code>html[data-theme]</code></td><td>green / amber / cyan and light / dark</td></tr>
+        <tr><td><code>html[data-ground]</code> <code>html[data-scan]</code></td><td>page ground: paper (default) / sand / cracked; scanlines on / off</td></tr>
+      </tbody>
+    </table></div>
+    <p class="rm-motto">RUSTOMANCY 0.2 - <span class="rm-fix"><s>design system</s><span class="px">rust reading</span></span></p>
+  </section>
+</main>
+
+<div class="modal fade" id="palm" tabindex="-1" aria-labelledby="palm-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rm-panel rm-modal">
+      <div class="modal-header">
+        <h2 class="rm-title-metal" style="font-size:45px" id="palm-title">Palmist</h2>
+        <button type="button" class="btn btn-rm btn-rm-xs" data-bs-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex gap-3 align-items-start">
+          <canvas id="palm-sigil" aria-hidden="true" style="flex:none"></canvas>
+          <div class="rm-crt flex-grow-1" id="fortune" style="min-height:150px"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-rm btn-rm-led" id="reread">Read again</button>
+        <button type="button" class="btn btn-rm btn-rm-led" data-bs-dismiss="modal">Accept fate</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px))!important">
+  <div id="toast" class="toast rm-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="rm-panel" style="padding:14px 18px"><div class="d-flex align-items-center gap-3"><span class="rm-led"></span><span class="rm-label" id="toast-text">Game saved</span><button type="button" class="btn btn-rm btn-rm-xs ms-auto" data-bs-dismiss="toast" aria-label="Close">X</button></div></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="dist/rustomancy.js"></script>
+<script src="demo/demo.js"></script>
+</body>
+</html>
