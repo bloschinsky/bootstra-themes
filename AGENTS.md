@@ -15,6 +15,7 @@ This repository is a small collection of Bootstrap 5 themes managed as an npm-wo
 | bootstra-win31 | `packages/bootstra-win31/` | `bootstra-win31` | [`packages/bootstra-win31/AGENTS.md`](packages/bootstra-win31/AGENTS.md) |
 | bootstra-p31 | `packages/bootstra-p31/` | `bootstra-p31` | [`packages/bootstra-p31/AGENTS.md`](packages/bootstra-p31/AGENTS.md) |
 | bootstra-irix | `packages/bootstra-irix/` | `bootstra-irix` | [`packages/bootstra-irix/AGENTS.md`](packages/bootstra-irix/AGENTS.md) |
+| bootstra-gunmetal | `packages/bootstra-gunmetal/` | `bootstra-gunmetal` | [`packages/bootstra-gunmetal/AGENTS.md`](packages/bootstra-gunmetal/AGENTS.md) |
 | bootstra-showcase (private) | `apps/showcase/` | not published | [`apps/showcase/AGENTS.md`](apps/showcase/AGENTS.md) |
 
 The collection is called **Bootstra Themes** (subtitle: *Bootstrap 5 Theme Collection*). The repository is [`bloschinsky/bootstra-themes`](https://github.com/bloschinsky/bootstra-themes) (it was `bloschinsky/bootstra-html32` before the rename; that name now belongs only to the HTML32 theme package).

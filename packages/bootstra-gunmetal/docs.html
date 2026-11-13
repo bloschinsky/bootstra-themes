@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en" data-gm-accent="orange">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gunmetal OS — components</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Saira+Condensed:wght@800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="gunmetal.css" rel="stylesheet">
+</head>
+<body class="gm-os">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gm-floppy" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M2 2h10l2 2v10H2zM5 2v4h6V2zM4 9v5h8V9zM9 3h1v2H9zM5 10h6v1H5zM5 12h6v1H5z"/></symbol>
+</svg>
+
+<div class="gm-desktop">
+<div class="gm-screen">
+<div class="gm-viewport gm-wall-studio">
+
+  <header class="gm-topbar">
+    <a class="gm-logo gm-logo-inline" href="index.html" aria-label="Open the prototype"><span class="gm-logo-word">Gunmetal</span><span class="gm-logo-mark">OS</span></a>
+    <div class="gm-titlebox"><span class="gm-title" style="font-size:var(--gm-fs-md)">Components</span><span class="gm-subtitle">: reference for v0.6</span></div>
+    <a class="btn btn-primary btn-sm ms-lg-2" href="index.html">Open prototype</a>
+    <span class="flex-grow-1"></span>
+    <div class="gm-swatches" role="group" aria-label="Glow colour">
+      <button class="gm-swatch" style="--sw:#ff6b1a" data-gm-accent-set="orange" aria-label="Orange"></button>
+      <button class="gm-swatch" style="--sw:#ffb000" data-gm-accent-set="amber" aria-label="Amber"></button>
+      <button class="gm-swatch" style="--sw:#a6e22e" data-gm-accent-set="lime" aria-label="Lime"></button>
+      <button class="gm-swatch" style="--sw:#2fd6f0" data-gm-accent-set="cyan" aria-label="Cyan"></button>
+      <button class="gm-swatch" style="--sw:#7fa9ff" data-gm-accent-set="ice" aria-label="Ice"></button>
+      <button class="gm-swatch" style="--sw:#ff4fb0" data-gm-accent-set="magenta" aria-label="Magenta"></button>
+      <button class="gm-swatch" style="--sw:#ff4033" data-gm-accent-set="red" aria-label="Red"></button>
+      <button class="gm-swatch" style="--sw:#e2e2d6" data-gm-accent-set="chalk" aria-label="Chalk"></button>
+    </div>
+    <button class="gm-chip" data-gm-action="wall-cycle">Wallpaper</button>
+    <button class="gm-chip" data-gm-action="text-toggle">Large text</button>
+  </header>
+
+  <div class="gm-docs">
+
+    <!-- ═════ SIDEBAR ═════ -->
+    <aside class="gm-module gm-docs-nav" aria-label="Contents">
+      <div class="gm-module-head"><span class="gm-tag">Contents</span><span class="gm-grip" style="flex-basis:24px"></span></div>
+      <nav class="gm-module-body" id="gm-toc">
+        <h6>Getting started</h6>
+        <a href="#intro">Introduction</a><a href="#install">Install</a><a href="#glow">Glow colours</a><a href="#tokens">Tokens</a><a href="#js-api">JavaScript API</a>
+        <h6>Shell</h6>
+        <a href="#desktop">Desktop</a><a href="#window">Window</a><a href="#module">Dock module</a><a href="#iconbar">Icon bar</a><a href="#statusbar">Status bar</a><a href="#slot">Drop slot</a>
+        <h6>Content</h6>
+        <a href="#typography">Typography</a><a href="#surfaces">Surfaces</a><a href="#tags">Tags</a><a href="#media">Media frame</a><a href="#code">Code and kbd</a>
+        <h6>Components</h6>
+        <a href="#buttons">Buttons</a><a href="#button-group">Button group</a><a href="#micro">Micro controls</a><a href="#badges">Badges</a><a href="#alerts">Alerts</a><a href="#cards">Cards</a><a href="#list-group">List group</a><a href="#tables">Tables</a><a href="#progress">Progress</a><a href="#vu">VU meter</a><a href="#spinners">Spinners</a><a href="#navbar">Navbar</a><a href="#navs">Navs and tabs</a><a href="#breadcrumb">Breadcrumb</a><a href="#pagination">Pagination</a><a href="#dropdowns">Dropdowns</a><a href="#accordion">Accordion</a><a href="#modal">Modal</a><a href="#offcanvas">Offcanvas</a><a href="#toasts">Toasts</a><a href="#tooltips">Tooltips and popovers</a>
+        <h6>Forms</h6>
+        <a href="#form-control">Form controls</a><a href="#select">Select</a><a href="#input-group">Input group</a><a href="#checks">Checks and radios</a><a href="#switches">Switches</a><a href="#range">Range</a><a href="#validation">Validation</a>
+        <h6>Extras</h6>
+        <a href="#wallpapers">Wallpapers</a><a href="#music">Music panel</a><a href="#utilities">Utilities</a>
+      </nav>
+    </aside>
+
+    <!-- ═════ CONTENT ═════ -->
+    <main class="gm-window">
+      <div class="gm-window-bar"><span class="gm-grip"></span><span class="flex-grow-1"></span><a class="gm-chip text-decoration-none" href="index.html">Prototype</a></div>
+      <div class="gm-window-body mt-2" style="padding:18px 20px">
+
+<!-- ════════════ GETTING STARTED ════════════ -->
+<h1 class="gm-doc-group">Getting started</h1>
+
+<section class="gm-doc" id="intro">
+  <h2>Introduction <a href="#intro" aria-label="Link to this section">#</a></h2>
+  <p>Gunmetal OS is a theme for Bootstrap 5.3 that makes pages look like a Flash-era desktop: bevelled steel windows, floppy-disk icons, pixel type and one glow colour that drives every accent. It does not replace Bootstrap. The grid, utilities and JavaScript plugins work as usual; the theme restyles them and adds a small set of <code>gm-</code> classes for the desktop shell.</p>
+  <p>This page lists every element with a live example and the markup that produces it. To see the pieces assembled into a full site, <a href="index.html">open the prototype</a>.</p>
+</section>
+
+<section class="gm-doc" id="install">
+  <h2>Install <a href="#install" aria-label="Link to this section">#</a></h2>
+  <p>Load the two pixel fonts, Bootstrap, then <code>gunmetal.css</code>. Put <code>gm-os</code> on the body. Add <code>gunmetal.js</code> after the Bootstrap bundle if you want glow switching, draggable windows, wallpapers and the music panel.</p>
+  <div class="gm-doc-code"><pre>&lt;!doctype html&gt;
+&lt;html lang="en" data-gm-accent="orange"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Saira+Condensed:wght@800&amp;display=swap" rel="stylesheet"&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+  &lt;link href="gunmetal.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body class="gm-os"&gt;
+  ...
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+  &lt;script src="gunmetal.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></div>
+  <div class="gm-doc-note">The theme is dark only and sets <code>color-scheme: dark</code>. Do not add <code>data-bs-theme="dark"</code>; the gm tokens already cover it.</div>
+</section>
+
+<section class="gm-doc" id="glow">
+  <h2>Glow colours <a href="#glow" aria-label="Link to this section">#</a></h2>
+  <p>One accent colour, the glow, is used for plates, icons, LEDs, progress bars, active states, scrollbars and focus. Set a preset on the <code>html</code> element, or pass any hex value through JavaScript. Status colours (success, warning, danger, info) stay fixed so meaning never depends on the glow.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="d-flex flex-wrap gap-2">
+  <button class="btn btn-sm" data-gm-accent-set="orange">Orange</button>
+  <button class="btn btn-sm" data-gm-accent-set="amber">Amber</button>
+  <button class="btn btn-sm" data-gm-accent-set="lime">Lime</button>
+  <button class="btn btn-sm" data-gm-accent-set="cyan">Cyan</button>
+  <button class="btn btn-sm" data-gm-accent-set="ice">Ice</button>
+  <button class="btn btn-sm" data-gm-accent-set="magenta">Magenta</button>
+  <button class="btn btn-sm" data-gm-accent-set="red">Red</button>
+  <button class="btn btn-sm" data-gm-accent-set="chalk">Chalk</button>
+  <input type="color" value="#ff6b1a" data-gm-accent-custom aria-label="Custom glow">
+</div>
+  </div>
+  <div class="gm-doc-code"><pre>&lt;html data-gm-accent="cyan"&gt;
+
+GM.setAccent('lime');      // preset
+GM.setAccent('#ff2266');   // any hex</pre></div>
+</section>
+
+<section class="gm-doc" id="tokens">
+  <h2>Tokens <a href="#tokens" aria-label="Link to this section">#</a></h2>
+  <p>All colours, sizes and bevels are CSS custom properties on <code>:root</code>. Bootstrap's own variables (<code>--bs-primary</code>, <code>--bs-body-bg</code>, <code>--bs-border-radius</code> and others) are mapped to them, so stock components pick up the theme.</p>
+  <h3>Steel palette</h3>
+  <div class="gm-swatch-row mb-3">
+    <div class="gm-swatch-card"><div style="background:var(--gm-void)"></div><span>--gm-void<br>#121212</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-deep)"></div><span>--gm-deep<br>#262626</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-well)"></div><span>--gm-well<br>#323232</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-panel)"></div><span>--gm-panel<br>#4a4a4a</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-frame)"></div><span>--gm-frame<br>#5e5e5e</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-steel)"></div><span>--gm-steel<br>#767676</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-field)"></div><span>--gm-field<br>#9a9a9a</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-hi)"></div><span>--gm-hi<br>#b8b8b8</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-accent)"></div><span>--gm-accent<br>glow</span></div>
+    <div class="gm-swatch-card"><div style="background:var(--gm-accent-dim)"></div><span>--gm-accent-dim</span></div>
+  </div>
+  <h3>Bevels</h3>
+  <p>Four box-shadow tokens build every edge in the theme. Combine them with <code>--gm-line</code> for the black outline and <code>--gm-drop</code> for the hard drop shadow.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="row g-3 text-center">
+  <div class="col-6 col-md-3"><div class="p-3" style="background:var(--gm-steel);box-shadow:var(--gm-raised),var(--gm-line)">raised</div></div>
+  <div class="col-6 col-md-3"><div class="p-3" style="background:var(--gm-well);box-shadow:var(--gm-sunken),var(--gm-line)">sunken</div></div>
+  <div class="col-6 col-md-3"><div class="p-3" style="background:var(--gm-panel);box-shadow:var(--gm-groove)">groove</div></div>
+  <div class="col-6 col-md-3"><div class="p-3" style="background:var(--gm-panel);box-shadow:var(--gm-raised),var(--gm-line),var(--gm-drop)">drop</div></div>
+</div>
+  </div>
+  <h3>Type scale</h3>
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Token</th><th>Size</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><code>--gm-fs-xs</code></td><td>8px</td><td>Labels, tags, captions, buttons</td></tr>
+        <tr><td><code>--gm-fs-sm</code></td><td>10px</td><td>Body copy (default)</td></tr>
+        <tr><td><code>--gm-fs-md</code></td><td>12px</td><td>Sub-headings, modal titles</td></tr>
+        <tr><td><code>--gm-fs-lg</code></td><td>16px</td><td>Window titles</td></tr>
+        <tr><td><code>--gm-fs-xl</code></td><td>24px</td><td>Page headings</td></tr>
+        <tr><td><code>--gm-scale</code></td><td>1 or 1.25</td><td>Multiplies all of the above. Set by <code>data-gm-text="large"</code>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="gm-doc" id="js-api">
+  <h2>JavaScript API <a href="#js-api" aria-label="Link to this section">#</a></h2>
+  <p><code>gunmetal.js</code> has no dependencies and works through data attributes. Every choice is saved in <code>localStorage</code> and restored on the next visit. The same functions are exposed on <code>window.GM</code>.</p>
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Attribute or call</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>data-gm-accent-set="cyan"</code></td><td>Switches the glow to a preset on click.</td></tr>
+        <tr><td><code>data-gm-accent-custom</code></td><td>On an <code>input type="color"</code>, applies the picked colour.</td></tr>
+        <tr><td><code>data-gm-wall-set="night"</code></td><td>Sets the wallpaper on <code>.gm-viewport</code>.</td></tr>
+        <tr><td><code>data-gm-target="#id"</code></td><td>On an icon, shows that section and hides others with the same <code>data-gm-group</code>. Updates the window title from <code>data-gm-title</code> and <code>data-gm-sub</code>.</td></tr>
+        <tr><td><code>data-gm-close</code></td><td>Collapses the nearest window or module to its title strip.</td></tr>
+        <tr><td><code>data-gm-reset</code></td><td>Moves the nearest window back to where it started. <code>data-gm-reset="all"</code> also restores all settings.</td></tr>
+        <tr><td><code>data-gm-track="0"</code></td><td>Plays one of nine built-in chip tracks (0–8).</td></tr>
+        <tr><td><code>data-gm-action="…"</code></td><td><code>music-toggle</code>, <code>music-off</code>, <code>glow-cycle</code>, <code>wall-cycle</code>, <code>wall-load</code>, <code>text-toggle</code>, <code>shutdown</code>.</td></tr>
+        <tr><td><code>.gm-draggable</code></td><td>Windows inside it can be dragged by their bar on screens 992px and wider.</td></tr>
+        <tr><td><code>GM.setAccent(v)</code> <code>GM.setWall(v)</code> <code>GM.setText(v)</code> <code>GM.setFx(bool)</code> <code>GM.play(i)</code> <code>GM.stop()</code></td><td>The same actions from your own code. The <code>gm:accent</code> event fires on <code>document</code> when the glow changes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════ SHELL ════════════ -->
+<h1 class="gm-doc-group">Shell</h1>
+
+<section class="gm-doc" id="desktop">
+  <h2>Desktop <a href="#desktop" aria-label="Link to this section">#</a></h2>
+  <p>The desktop is three nested layers: <code>.gm-desktop</code> pads the page, <code>.gm-screen</code> is the steel frame with cut corners, and <code>.gm-viewport</code> holds the wallpaper, grain and scanlines. Inside it, <code>.gm-workspace</code> is a two-column grid: the <code>.gm-stage</code> for windows and a 190px <code>.gm-dock</code> on the right. Below 992px the grid becomes one column.</p>
+  <div class="gm-doc-code"><pre>&lt;div class="gm-desktop"&gt;
+  &lt;div class="gm-screen"&gt;
+    &lt;div class="gm-viewport gm-wall-sunrise"&gt;
+      &lt;a class="gm-logo" href="#"&gt;
+        &lt;span class="gm-logo-word"&gt;Gunmetal&lt;/span&gt;&lt;span class="gm-logo-mark"&gt;OS&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;div class="gm-workspace gm-draggable"&gt;
+        &lt;main class="gm-stage"&gt; windows &lt;/main&gt;
+        &lt;aside class="gm-dock"&gt; modules &lt;/aside&gt;
+      &lt;/div&gt;
+      &lt;div class="gm-statusbar"&gt;...&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+  <p>For a page without the dock, such as this one, use <code>.gm-logo-inline</code> inside a sticky <code>.gm-topbar</code>.</p>
+  <div class="gm-doc-example" data-gm-code>
+<a class="gm-logo gm-logo-inline" href="#"><span class="gm-logo-word">Gunmetal</span><span class="gm-logo-mark">OS</span></a>
+  </div>
+</section>
+
+<section class="gm-doc" id="window">
+  <h2>Window <a href="#window" aria-label="Link to this section">#</a></h2>
+  <p>A window has a bar (grip, reset and collapse), a title box and a grooved body. Put panes inside the body to split content into framed blocks. Add <code>.gm-window-float</code> to make a smaller window that overlaps the one above it, like a palette.</p>
+  <div class="gm-doc-example" data-gm-code>
+<section class="gm-window">
+  <div class="gm-window-bar">
+    <span class="gm-grip"></span>
+    <button class="gm-chip" data-gm-reset>Reset</button>
+    <span class="flex-grow-1"></span>
+    <button class="gm-x" data-gm-close aria-label="Collapse window">x</button>
+  </div>
+  <div class="gm-window-head">
+    <div class="gm-titlebox">
+      <h2 class="gm-title">Team</h2>
+      <span class="gm-subtitle">: mug shots of the people behind the work.</span>
+    </div>
+  </div>
+  <div class="gm-window-body">
+    <div class="gm-pane">
+      <span class="gm-tag">About</span>
+      <div class="gm-plate">Window body content goes here.</div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+<section class="gm-doc" id="module">
+  <h2>Dock module <a href="#module" aria-label="Link to this section">#</a></h2>
+  <p>Modules are the small panels in the dock. The head holds a tag and a collapse button; <code>.gm-fieldrow</code> lines up a label and a field in two columns.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="gm-module" style="max-width:200px">
+  <div class="gm-module-head">
+    <span class="gm-tag">Client area login</span>
+    <button class="gm-chip">Submit</button>
+  </div>
+  <div class="gm-module-body">
+    <div class="gm-fieldrow"><label for="dm-u">User name</label><input class="form-control" id="dm-u"></div>
+    <div class="gm-fieldrow mb-0"><label for="dm-p">Password</label><input class="form-control" id="dm-p" type="password"></div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="iconbar">
+  <h2>Icon bar <a href="#iconbar" aria-label="Link to this section">#</a></h2>
+  <p>A six-column grid of floppy-disk icons used as the main navigation. The active icon turns into a dark socket with a lit dot. Include the <code>gm-floppy</code> SVG symbol once per page.</p>
+  <div class="gm-doc-example" data-gm-code>
+<nav class="gm-iconbar" style="max-width:200px" aria-label="Sections">
+  <button class="gm-icon is-active"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Home</span></button>
+  <button class="gm-icon"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Skills</span></button>
+  <button class="gm-icon"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Case</span></button>
+  <button class="gm-icon"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Team</span></button>
+  <button class="gm-icon"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Jobs</span></button>
+  <button class="gm-icon"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Links</span></button>
+</nav>
+  </div>
+  <div class="gm-doc-code"><pre>&lt;!-- once per page --&gt;
+&lt;svg width="0" height="0" style="position:absolute" aria-hidden="true"&gt;
+  &lt;symbol id="gm-floppy" viewBox="0 0 16 16"&gt;
+    &lt;path fill="currentColor" fill-rule="evenodd" d="M2 2h10l2 2v10H2zM5 2v4h6V2zM4 9v5h8V9zM9 3h1v2H9zM5 10h6v1H5zM5 12h6v1H5z"/&gt;
+  &lt;/symbol&gt;
+&lt;/svg&gt;</pre></div>
+</section>
+
+<section class="gm-doc" id="statusbar">
+  <h2>Status bar <a href="#statusbar" aria-label="Link to this section">#</a></h2>
+  <p>Sits in the bottom-left corner of the viewport. Each child becomes an inset cell. <code>data-gm-clock</code> shows the local time.</p>
+  <div class="gm-doc-example" style="min-height:44px" data-gm-code>
+<div class="gm-statusbar"><span>&copy; Gunmetal 2001</span><span>V.6</span><span data-gm-clock>--:--</span></div>
+  </div>
+</section>
+
+<section class="gm-doc" id="slot">
+  <h2>Drop slot <a href="#slot" aria-label="Link to this section">#</a></h2>
+  <p>A disk-drive slot for drag and drop. With <code>data-gm-drop</code>, an image dropped on it becomes the wallpaper. It lights up with the glow while a file is held over it.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="gm-slot" data-gm-drop><span>Drop disk here</span><span class="gm-slot-hole"></span></div>
+  </div>
+</section>
+
+<!-- ════════════ CONTENT ════════════ -->
+<h1 class="gm-doc-group">Content</h1>
+
+<section class="gm-doc" id="typography">
+  <h2>Typography <a href="#typography" aria-label="Link to this section">#</a></h2>
+  <p>Silkscreen is the pixel face for everything; Saira Condensed is used only for the logo and <code>.gm-display</code> headlines. Font smoothing is turned off so pixels stay sharp. <code>h5</code> and <code>h6</code> take the glow colour.</p>
+  <div class="gm-doc-example" data-gm-code>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h5>Heading 5</h5>
+<p>Body copy at 10px. A <a href="#">link</a> uses the glow.</p>
+<p class="small">Small text at 8px for captions.</p>
+<p class="gm-display">Steel shell.</p>
+  </div>
+</section>
+
+<section class="gm-doc" id="surfaces">
+  <h2>Surfaces <a href="#surfaces" aria-label="Link to this section">#</a></h2>
+  <p>Four surfaces cover most layouts. A <strong>pane</strong> is a grooved frame inside a window. A <strong>well</strong> is a dark inset box for text. A <strong>plate</strong> is a solid glow block with dark text. An <strong>LCD</strong> is a black readout with glowing text.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="row g-2">
+  <div class="col-md-3"><div class="gm-pane">.gm-pane</div></div>
+  <div class="col-md-3"><div class="gm-well">.gm-well</div></div>
+  <div class="col-md-3"><div class="gm-plate">.gm-plate with a <a href="#">link</a></div></div>
+  <div class="col-md-3"><div class="gm-screen-lcd">.gm-screen-lcd 626 kb</div></div>
+</div>
+  </div>
+  <p class="mt-2">Add <code>.gm-scroll</code> and a max height to a well to make a scrolling news column, and use <code>hr.gm-divider</code> between items.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="gm-well gm-scroll" style="max-height:110px">
+  <p class="gm-accent mb-1">Site launched</p>
+  <p>The new site is a hybrid of Flash and HTML.</p>
+  <hr class="gm-divider">
+  <p class="gm-accent mb-1">Interview</p>
+  <p class="mb-0">We talked about 3D for the web.</p>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="tags">
+  <h2>Tags <a href="#tags" aria-label="Link to this section">#</a></h2>
+  <p>Small labels that name a pane or a panel. Place one at the top of a pane, before its content.</p>
+  <div class="gm-doc-example" data-gm-code>
+<span class="gm-tag">gm-tag</span>
+<span class="gm-tag gm-tag-solid">gm-tag-solid</span>
+<span class="gm-tag gm-tag-plain">gm-tag-plain</span>
+  </div>
+</section>
+
+<section class="gm-doc" id="media">
+  <h2>Media frame <a href="#media" aria-label="Link to this section">#</a></h2>
+  <p><code>.gm-media</code> frames an image or video and turns it into a glow duotone: the picture is made greyscale and multiplied over the glow colour, so photos follow the theme. Add <code>.gm-media-raw</code> to keep original colours.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="d-flex gap-3">
+  <div class="gm-media" style="width:120px;height:90px">
+    <svg viewBox="0 0 120 90" width="100%" height="100%"><rect width="120" height="90" fill="#bbb"/><circle cx="60" cy="34" r="16" fill="#222"/><path d="M20 90c4-24 20-34 40-34s36 10 40 34z" fill="#222"/></svg>
+  </div>
+  <div class="gm-media" style="width:120px;height:90px"><canvas data-gm-wire style="width:100%;height:100%;display:block"></canvas></div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="code">
+  <h2>Code and kbd <a href="#code" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<p>Inline <code>.gm-window</code> and keys: <kbd>Ctrl</kbd> + <kbd>S</kbd></p>
+<pre>10 PRINT "HELLO"
+20 GOTO 10</pre>
+  </div>
+</section>
+
+<!-- ════════════ COMPONENTS ════════════ -->
+<h1 class="gm-doc-group">Components</h1>
+
+<section class="gm-doc" id="buttons">
+  <h2>Buttons <a href="#buttons" aria-label="Link to this section">#</a></h2>
+  <p>Standard Bootstrap button classes. Buttons are raised steel and press in when clicked. <code>.btn-primary</code> uses the glow; <code>.btn-dark</code> is a dark key with glowing text; outline variants all use the glow.</p>
+  <div class="gm-doc-example" data-gm-code>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn">Default</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-outline-primary">Outline</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>
+  </div>
+  <h3>Sizes and states</h3>
+  <div class="gm-doc-example" data-gm-code>
+<button type="button" class="btn btn-primary btn-lg">Large</button>
+<button type="button" class="btn btn-primary">Default</button>
+<button type="button" class="btn btn-primary btn-sm">Small</button>
+<button type="button" class="btn active">Active</button>
+<button type="button" class="btn" disabled>Disabled</button>
+  </div>
+</section>
+
+<section class="gm-doc" id="button-group">
+  <h2>Button group <a href="#button-group" aria-label="Link to this section">#</a></h2>
+  <p>Group buttons, or use <code>.btn-check</code> radios for a toggle where one option stays pressed.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="btn-group" role="group" aria-label="View mode">
+  <input type="radio" class="btn-check" name="bg1" id="bg1a" checked>
+  <label class="btn" for="bg1a">List</label>
+  <input type="radio" class="btn-check" name="bg1" id="bg1b">
+  <label class="btn" for="bg1b">Grid</label>
+  <input type="radio" class="btn-check" name="bg1" id="bg1c">
+  <label class="btn" for="bg1c">Map</label>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="micro">
+  <h2>Micro controls <a href="#micro" aria-label="Link to this section">#</a></h2>
+  <p>Tiny controls for window bars and dock modules. <code>.gm-chip</code> is a 10px button, <code>.gm-x</code> a square close or collapse button, <code>.gm-key</code> a flat dark key (add <code>.is-on</code> to light it), <code>.gm-grip</code> the striped drag handle and <code>.gm-led</code> a status light.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="d-flex flex-wrap gap-2 align-items-center">
+  <button class="gm-chip">Reset</button>
+  <button class="gm-chip gm-chip-accent">Music</button>
+  <button class="gm-x" aria-label="Close">x</button>
+  <span class="gm-grip"></span>
+  <button class="gm-key">Track 1</button>
+  <button class="gm-key is-on">Track 2</button>
+  <span class="gm-led"></span>
+  <span class="gm-led is-on"></span>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="badges">
+  <h2>Badges <a href="#badges" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<span class="badge text-bg-primary">New</span>
+<span class="badge text-bg-secondary">v.6</span>
+<span class="badge text-bg-dark">Beta</span>
+<span class="badge text-bg-success">Online</span>
+<span class="badge text-bg-warning">Busy</span>
+<span class="badge text-bg-danger">Hot</span>
+<h3 class="mt-2">Inbox <span class="badge text-bg-primary">4</span></h3>
+  </div>
+</section>
+
+<section class="gm-doc" id="alerts">
+  <h2>Alerts <a href="#alerts" aria-label="Link to this section">#</a></h2>
+  <p>Alerts are dark wells with a coloured edge. The first line takes the edge colour, so start with a short heading and put the detail on the next line.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="alert alert-primary" role="alert">Glow alert<br>Uses the current glow colour.</div>
+<div class="alert alert-success" role="alert">Upload complete<br>3 files copied to the archive.</div>
+<div class="alert alert-warning" role="alert">Low disk space<br>12 mb left on drive c:.</div>
+<div class="alert alert-danger" role="alert">Disk not found<br>Insert a disk into drive a: and press retry.</div>
+<div class="alert alert-info mb-0" role="alert">Update available<br>Version 7 can be downloaded now.</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="cards">
+  <h2>Cards <a href="#cards" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<div class="card" style="max-width:280px">
+  <div class="card-header">Case study</div>
+  <div class="card-body">
+    <h5 class="card-title">Record book site</h5>
+    <p class="card-text">Built entirely in Flash with XML feeding the database content.</p>
+    <a href="#" class="btn btn-primary btn-sm">Read case</a>
+  </div>
+  <div class="card-footer">Updated 02/09/01</div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="list-group">
+  <h2>List group <a href="#list-group" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<div class="list-group" style="max-width:260px">
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Showreel_2001.swf</a>
+  <a href="#" class="list-group-item list-group-item-action">Brochure.pdf</a>
+  <a href="#" class="list-group-item list-group-item-action">Wallpapers.zip</a>
+  <span class="list-group-item disabled">Archive.lzh</span>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="tables">
+  <h2>Tables <a href="#tables" aria-label="Link to this section">#</a></h2>
+  <p>Wrap a table in <code>.table-wrap</code> for the sunken frame and horizontal scrolling on narrow screens. Striped, hover and active rows all work.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="table-wrap">
+  <table class="table table-striped table-hover">
+    <thead><tr><th>Client</th><th>Project</th><th class="text-end">Size</th></tr></thead>
+    <tbody>
+      <tr><td>Record book ltd</td><td>Main site</td><td class="text-end">1.2 mb</td></tr>
+      <tr class="table-active"><td>Kestrel audio</td><td>Promo CD</td><td class="text-end">48 mb</td></tr>
+      <tr><td>Harbour bank</td><td>Intranet</td><td class="text-end">310 kb</td></tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="progress">
+  <h2>Progress <a href="#progress" aria-label="Link to this section">#</a></h2>
+  <p>Bars are drawn as LED segments in the glow colour. Use <code>.bg-secondary</code> for a grey secondary bar, such as a buffer.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="progress mb-2" role="progressbar" aria-label="Loading" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar" style="width:68%"></div>
+</div>
+<div class="progress" role="progressbar" aria-label="Buffer" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+  <div class="progress-bar bg-secondary" style="width:35%"></div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="vu">
+  <h2>VU meter <a href="#vu" aria-label="Link to this section">#</a></h2>
+  <p>A vertical segmented level meter. Set <code>--gm-level</code> from 0 to 1. The music panel drives it automatically.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="d-flex gap-2 align-items-end">
+  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.3"></div></div>
+  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.6"></div></div>
+  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.9"></div></div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="spinners">
+  <h2>Spinners <a href="#spinners" aria-label="Link to this section">#</a></h2>
+  <p>Spinners are square and turn in eight steps, like a low frame-rate animation.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="spinner-border" role="status"><span class="visually-hidden">Loading</span></div>
+<div class="spinner-grow ms-3" role="status"><span class="visually-hidden">Loading</span></div>
+<button class="btn btn-primary ms-3" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Loading
+</button>
+  </div>
+</section>
+
+<section class="gm-doc" id="navbar">
+  <h2>Navbar <a href="#navbar" aria-label="Link to this section">#</a></h2>
+  <p>A steel bar for pages that use a classic top navigation instead of the icon bar. Collapses behind a pixel menu button on small screens.</p>
+  <div class="gm-doc-example" data-gm-code>
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gunmetal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nb1" aria-controls="nb1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nb1">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+      <form class="d-flex gap-1" role="search">
+        <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-sm btn-primary" type="submit">Go</button>
+      </form>
+    </div>
+  </div>
+</nav>
+  </div>
+</section>
+
+<section class="gm-doc" id="navs">
+  <h2>Navs and tabs <a href="#navs" aria-label="Link to this section">#</a></h2>
+  <p>Tabs sit on a glow line; the active tab becomes a glow plate. Pills are dark keys.</p>
+  <div class="gm-doc-example" data-gm-code>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#dt1" type="button" role="tab">Skills</button></li>
+  <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#dt2" type="button" role="tab">Clients</button></li>
+  <li class="nav-item" role="presentation"><button class="nav-link" disabled>Archive</button></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane show active" id="dt1" role="tabpanel">Flash 5, Swift 3D, 3D Studio Max.</div>
+  <div class="tab-pane" id="dt2" role="tabpanel">Record labels, rail operators and banks.</div>
+</div>
+  </div>
+  <div class="gm-doc-example" data-gm-code>
+<ul class="nav nav-pills">
+  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">All</a></li>
+  <li class="nav-item"><a class="nav-link" href="#">Web</a></li>
+  <li class="nav-item"><a class="nav-link" href="#">CD-ROM</a></li>
+</ul>
+  </div>
+</section>
+
+<section class="gm-doc" id="breadcrumb">
+  <h2>Breadcrumb <a href="#breadcrumb" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Clients</a></li>
+    <li class="breadcrumb-item active" aria-current="page">2001</li>
+  </ol>
+</nav>
+  </div>
+</section>
+
+<section class="gm-doc" id="pagination">
+  <h2>Pagination <a href="#pagination" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<nav aria-label="Pages">
+  <ul class="pagination mb-0">
+    <li class="page-item disabled"><span class="page-link">&lt;</span></li>
+    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+  </ul>
+</nav>
+  </div>
+</section>
+
+<section class="gm-doc" id="dropdowns">
+  <h2>Dropdowns <a href="#dropdowns" aria-label="Link to this section">#</a></h2>
+  <p>Menus are raised steel panels; the highlighted item fills with the glow.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">File</button>
+  <ul class="dropdown-menu">
+    <li><h6 class="dropdown-header">Project</h6></li>
+    <li><a class="dropdown-item" href="#">New</a></li>
+    <li><a class="dropdown-item" href="#">Open...</a></li>
+    <li><a class="dropdown-item active" href="#">Save</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Exit</a></li>
+  </ul>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="accordion">
+  <h2>Accordion <a href="#accordion" aria-label="Link to this section">#</a></h2>
+  <p>The open item turns into a glow plate. The chevron is replaced by a pixel plus and minus.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="accordion" id="dacc">
+  <div class="accordion-item">
+    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dacc1">How do I change the glow?</button></h2>
+    <div id="dacc1" class="accordion-collapse collapse show" data-bs-parent="#dacc"><div class="accordion-body">Set data-gm-accent on the html tag.</div></div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dacc2">Does it need Flash?</button></h2>
+    <div id="dacc2" class="accordion-collapse collapse" data-bs-parent="#dacc"><div class="accordion-body">No. It only looks like it does.</div></div>
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="modal">
+  <h2>Modal <a href="#modal" aria-label="Link to this section">#</a></h2>
+  <p>A modal is a window: sunken title strip, grooved body. Keep modal markup as a direct child of <code>body</code>, outside <code>.gm-viewport</code>, so it is not trapped under the backdrop. Below is a static preview and a live button.</p>
+  <div class="gm-doc-example" data-gm-code-from="#tpl-modal">
+<div class="modal position-static d-block" tabindex="-1" style="z-index:auto">
+  <div class="modal-dialog m-0">
+    <div class="modal-content">
+      <div class="modal-header"><span class="gm-grip me-2"></span><h2 class="modal-title me-auto">Save changes?</h2><button type="button" class="btn-close" aria-label="Close"></button></div>
+      <div class="modal-body"><p class="mb-0">Your project has unsaved changes. Save them before closing?</p></div>
+      <div class="modal-footer"><button type="button" class="btn">Don't save</button><button type="button" class="btn btn-primary">Save</button></div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#docModal">Open live modal</button>
+  </div>
+</section>
+
+<section class="gm-doc" id="offcanvas">
+  <h2>Offcanvas <a href="#offcanvas" aria-label="Link to this section">#</a></h2>
+  <p>A side drawer styled like a window. Like the modal, place its markup directly in <code>body</code>.</p>
+  <div class="gm-doc-example" data-gm-code-from="#tpl-offcanvas">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#docOffcanvas" aria-controls="docOffcanvas">Open drawer</button>
+  </div>
+</section>
+
+<section class="gm-doc" id="toasts">
+  <h2>Toasts <a href="#toasts" aria-label="Link to this section">#</a></h2>
+  <p>System messages with a lit LED. The preview is shown statically; the button triggers a live one in the corner.</p>
+  <div class="gm-doc-example" data-gm-code-from="#tpl-toast">
+<div class="toast show" role="status" aria-live="polite" aria-atomic="true">
+  <div class="toast-header"><span class="gm-led is-on me-2"></span><strong class="me-auto">System</strong><small class="me-2">now</small><button type="button" class="btn-close" aria-label="Close"></button></div>
+  <div class="toast-body">Showreel_2001.swf saved to drive c:</div>
+</div>
+<button class="btn mt-3" data-gm-toast-show="#docToast">Show live toast</button>
+  </div>
+</section>
+
+<section class="gm-doc" id="tooltips">
+  <h2>Tooltips and popovers <a href="#tooltips" aria-label="Link to this section">#</a></h2>
+  <p>Tooltips are small glow labels. Popovers get a glow header. <code>gunmetal.js</code> initialises every <code>data-bs-toggle="tooltip"</code> and <code>"popover"</code> element on load.</p>
+  <div class="gm-doc-example" data-gm-code>
+<button type="button" class="btn" data-bs-toggle="tooltip" data-bs-title="Saves to drive c:">Hover for tooltip</button>
+<button type="button" class="btn btn-dark" data-bs-toggle="popover" data-bs-title="Track 4" data-bs-content="128 bpm, 626 kb, looped.">Click for popover</button>
+  </div>
+</section>
+
+<!-- ════════════ FORMS ════════════ -->
+<h1 class="gm-doc-group">Forms</h1>
+
+<section class="gm-doc" id="form-control">
+  <h2>Form controls <a href="#form-control" aria-label="Link to this section">#</a></h2>
+  <p>Fields are light grey and sunken, as in Flash-era forms. Focus adds a glow ring. Labels are 8px pixel text.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="row g-2">
+  <div class="col-md-6">
+    <label for="fc1" class="form-label">Your email</label>
+    <input type="email" class="form-control" id="fc1" placeholder="you@studio.net">
+    <div class="form-text">We never share it.</div>
+  </div>
+  <div class="col-md-6">
+    <label for="fc2" class="form-label">Disabled</label>
+    <input class="form-control" id="fc2" value="Status: ready" disabled>
+  </div>
+  <div class="col-12">
+    <label for="fc3" class="form-label">Message</label>
+    <textarea class="form-control" id="fc3" placeholder="Tell us about the project"></textarea>
+  </div>
+  <div class="col-md-6">
+    <label for="fc4" class="form-label">Attach file</label>
+    <input class="form-control form-control-sm" type="file" id="fc4">
+  </div>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="select">
+  <h2>Select <a href="#select" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<select class="form-select" aria-label="Interest" style="max-width:240px">
+  <option selected>Flash site</option>
+  <option>3D intro</option>
+  <option>CD-ROM</option>
+</select>
+  </div>
+</section>
+
+<section class="gm-doc" id="input-group">
+  <h2>Input group <a href="#input-group" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<div class="input-group mb-2" style="max-width:320px">
+  <span class="input-group-text">GBP</span>
+  <input type="text" class="form-control" aria-label="Budget" placeholder="5 000">
+  <span class="input-group-text">.00</span>
+</div>
+<div class="input-group" style="max-width:320px">
+  <input type="text" class="form-control" placeholder="Search the archive" aria-label="Search">
+  <button class="btn btn-primary" type="button">Find</button>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="checks">
+  <h2>Checks and radios <a href="#checks" aria-label="Link to this section">#</a></h2>
+  <p>Square 10px boxes. When checked, a glow square appears inside, like the quality and speed toggles on old Flash sites.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ck1" checked>
+  <label class="form-check-label" for="ck1">Send me the newsletter</label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" id="ck2">
+  <label class="form-check-label" for="ck2">Show source files</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="rq" id="rq1" checked>
+  <label class="form-check-label" for="rq1">Quality</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="rq" id="rq2">
+  <label class="form-check-label" for="rq2">Speed</label>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="switches">
+  <h2>Switches <a href="#switches" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="sw1" checked>
+  <label class="form-check-label" for="sw1">Sound effects</label>
+</div>
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="sw2">
+  <label class="form-check-label" for="sw2">Autoplay intro</label>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="range">
+  <h2>Range <a href="#range" aria-label="Link to this section">#</a></h2>
+  <div class="gm-doc-example" data-gm-code>
+<label for="rg1" class="form-label">Volume</label>
+<input type="range" class="form-range" id="rg1" value="60" style="max-width:280px">
+  </div>
+</section>
+
+<section class="gm-doc" id="validation">
+  <h2>Validation <a href="#validation" aria-label="Link to this section">#</a></h2>
+  <p>Use Bootstrap's <code>.is-valid</code> and <code>.is-invalid</code>. The field gets a green or red ring and the message tells the user how to fix it.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="row g-2">
+  <div class="col-md-6">
+    <label for="vd1" class="form-label">User name</label>
+    <input class="form-control is-valid" id="vd1" value="neville">
+    <div class="valid-feedback">Name is free.</div>
+  </div>
+  <div class="col-md-6">
+    <label for="vd2" class="form-label">Password</label>
+    <input class="form-control is-invalid" id="vd2" type="password" value="123">
+    <div class="invalid-feedback">Use at least 8 characters.</div>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- ════════════ EXTRAS ════════════ -->
+<h1 class="gm-doc-group">Extras</h1>
+
+<section class="gm-doc" id="wallpapers">
+  <h2>Wallpapers <a href="#wallpapers" aria-label="Link to this section">#</a></h2>
+  <p>Six wallpapers are built from CSS gradients, so they need no image files. Apply one as a class on <code>.gm-viewport</code>, or switch at runtime with <code>data-gm-wall-set</code>. The night wallpaper uses the glow for its grid.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="gm-thumbs" style="max-width:420px">
+  <button class="gm-thumb gm-wall-sunrise" data-gm-wall-set="sunrise" aria-label="Sunrise"></button>
+  <button class="gm-thumb gm-wall-overcast" data-gm-wall-set="overcast" aria-label="Overcast"></button>
+  <button class="gm-thumb gm-wall-night" data-gm-wall-set="night" aria-label="Night"></button>
+  <button class="gm-thumb gm-wall-arctic" data-gm-wall-set="arctic" aria-label="Arctic"></button>
+  <button class="gm-thumb gm-wall-desert" data-gm-wall-set="desert" aria-label="Desert"></button>
+  <button class="gm-thumb gm-wall-studio" data-gm-wall-set="studio" aria-label="Studio"></button>
+</div>
+  </div>
+</section>
+
+<section class="gm-doc" id="music">
+  <h2>Music panel <a href="#music" aria-label="Link to this section">#</a></h2>
+  <p>Nine looping chip tracks generated with the Web Audio API, so there are no audio files. Any element with <code>data-gm-track</code> plays a track; <code>data-gm-music-readout</code>, <code>data-gm-music-pos</code> and <code>.gm-vu</code> update while it plays.</p>
+  <div class="gm-doc-example" data-gm-code>
+<div class="d-flex gap-2 align-items-stretch" style="max-width:320px">
+  <div class="gm-keys flex-grow-1">
+    <button class="gm-key" data-gm-track="0">Track 1</button>
+    <button class="gm-key" data-gm-track="1">Track 2</button>
+    <button class="gm-key" data-gm-track="2">Track 3</button>
+    <button class="gm-key" data-gm-action="music-off">Off</button>
+  </div>
+  <div class="gm-vu-frame"><div class="gm-vu"></div></div>
+  <div class="gm-screen-lcd" data-gm-music-readout style="min-width:90px">Music off</div>
+</div>
+<div class="progress mt-2" style="max-width:320px;--bs-progress-height:8px"><div class="progress-bar" data-gm-music-pos style="width:0%"></div></div>
+  </div>
+</section>
+
+<section class="gm-doc" id="utilities">
+  <h2>Utilities <a href="#utilities" aria-label="Link to this section">#</a></h2>
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Class</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td><code>.gm-accent</code></td><td>Text in the glow colour.</td></tr>
+        <tr><td><code>.gm-bg-accent</code></td><td>Glow background with dark text.</td></tr>
+        <tr><td><code>.gm-display</code></td><td>Large condensed headline, as in the home plate of the prototype.</td></tr>
+        <tr><td><code>.gm-scroll</code></td><td>Scrolling container with a contained overscroll.</td></tr>
+        <tr><td><code>.gm-divider</code></td><td>Dashed rule between items in a well.</td></tr>
+        <tr><td><code>.gm-blink</code></td><td>Stepped cursor blink. Off when effects are off or motion is reduced.</td></tr>
+        <tr><td><code>html.gm-fx-off</code></td><td>Removes scanlines and grain and stops animation. Set by the Speed option.</td></tr>
+        <tr><td><code>html[data-gm-text="large"]</code></td><td>Scales all pixel text by 1.25 for easier reading.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-3 mb-0">All pieces together: <a href="index.html">open the assembled prototype</a>.</p>
+</section>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="gm-statusbar"><span>&copy; Gunmetal 2001</span><span>Docs v.6</span><a href="index.html">Prototype</a><span data-gm-clock>--:--</span></div>
+</div>
+</div>
+</div>
+
+<!-- live overlays (direct children of body) -->
+<div class="modal fade" id="docModal" tabindex="-1" aria-labelledby="docModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><span class="gm-grip me-2"></span><h2 class="modal-title me-auto" id="docModalTitle">Save changes?</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body"><p class="mb-0">Your project has unsaved changes. Save them before closing?</p></div>
+      <div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal">Don't save</button><button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="docOffcanvas" aria-labelledby="docOffcanvasTitle">
+  <div class="offcanvas-header"><h2 class="offcanvas-title" id="docOffcanvasTitle">Gallery</h2><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+  <div class="offcanvas-body"><p>Drawers hold filters, settings or a secondary menu.</p><div class="list-group"><a href="#" class="list-group-item list-group-item-action active">Sunrise</a><a href="#" class="list-group-item list-group-item-action">Night grid</a></div></div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast" id="docToast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-header"><span class="gm-led is-on me-2"></span><strong class="me-auto">System</strong><small class="me-2">now</small><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div>
+    <div class="toast-body">Showreel_2001.swf saved to drive c:</div>
+  </div>
+</div>
+
+<!-- code shown for overlay examples -->
+<template id="tpl-modal">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#saveModal">Open modal</button>
+
+<!-- place directly inside body -->
+<div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="gm-grip me-2"></span>
+        <h2 class="modal-title me-auto" id="saveModalTitle">Save changes?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"><p class="mb-0">Your project has unsaved changes. Save them before closing?</p></div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-dismiss="modal">Don't save</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+<template id="tpl-offcanvas">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#drawer" aria-controls="drawer">Open drawer</button>
+
+<!-- place directly inside body -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="drawer" aria-labelledby="drawerTitle">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="drawerTitle">Gallery</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">...</div>
+</div>
+</template>
+<template id="tpl-toast">
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast" id="savedToast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-header">
+      <span class="gm-led is-on me-2"></span>
+      <strong class="me-auto">System</strong>
+      <small class="me-2">now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">Showreel_2001.swf saved to drive c:</div>
+  </div>
+</div>
+
+<script>
+  bootstrap.Toast.getOrCreateInstance('#savedToast').show();
+</script>
+</template>
+
+<script>
+/* docs helpers: build code blocks from examples, copy buttons, scrollspy */
+(() => {
+  const dedent = s => {
+    const lines = s.replace(/\t/g, '  ').split('\n');
+    while (lines.length && !lines[0].trim()) lines.shift();
+    while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+    const ind = Math.min(...lines.filter(l => l.trim()).map(l => l.match(/^ */)[0].length));
+    return lines.map(l => l.slice(ind)).join('\n').replace(/=""/g, '');
+  };
+  document.querySelectorAll('.gm-doc-example[data-gm-code], .gm-doc-example[data-gm-code-from]').forEach(ex => {
+    const src = ex.dataset.gmCodeFrom ? document.querySelector(ex.dataset.gmCodeFrom).innerHTML : ex.innerHTML;
+    const wrap = document.createElement('div'); wrap.className = 'gm-doc-code';
+    const pre = document.createElement('pre'); pre.textContent = dedent(src);
+    wrap.appendChild(pre); ex.after(wrap);
+  });
+  document.querySelectorAll('.gm-doc-code').forEach(w => {
+    const b = document.createElement('button'); b.className = 'gm-chip'; b.type = 'button'; b.textContent = 'Copy';
+    b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(w.querySelector('pre').textContent); b.textContent = 'Copied'; }
+      catch (e) { b.textContent = 'Select and copy'; }
+      setTimeout(() => b.textContent = 'Copy', 1400);
+    });
+    w.prepend(b);
+  });
+  document.querySelectorAll('.gm-doc-example a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+  const links = [...document.querySelectorAll('#gm-toc a')];
+  const byId = Object.fromEntries(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.remove('is-current'));
+    const a = byId[e.target.id]; if (!a) return; a.classList.add('is-current');
+    const box = a.closest('.gm-module-body'); if (box.scrollHeight > box.clientHeight && (a.offsetTop < box.scrollTop || a.offsetTop > box.scrollTop + box.clientHeight - 20)) box.scrollTop = a.offsetTop - 40;
+  }), { rootMargin: '-60px 0px -70% 0px' });
+  document.querySelectorAll('.gm-doc[id]').forEach(s => io.observe(s));
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="gunmetal.js"></script>
+</body>
+</html>

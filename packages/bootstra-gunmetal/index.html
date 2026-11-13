@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en" data-gm-accent="orange">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gunmetal OS — prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Saira+Condensed:wght@800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="gunmetal.css" rel="stylesheet">
+</head>
+<body class="gm-os">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="gm-floppy" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M2 2h10l2 2v10H2zM5 2v4h6V2zM4 9v5h8V9zM9 3h1v2H9zM5 10h6v1H5zM5 12h6v1H5z"/></symbol>
+</svg>
+
+<div class="gm-desktop">
+<div class="gm-screen">
+<div class="gm-viewport gm-wall-sunrise">
+
+  <a class="gm-logo" href="#" aria-label="Gunmetal OS home"><span class="gm-logo-word">Gunmetal</span><span class="gm-logo-mark">OS</span></a>
+
+  <div class="gm-workspace gm-draggable">
+
+    <!-- ═════════ STAGE ═════════ -->
+    <main class="gm-stage">
+
+      <section class="gm-window" id="win-main" aria-labelledby="win-main-title">
+        <div class="gm-window-bar">
+          <span class="gm-grip"></span>
+          <button class="gm-chip" data-gm-reset>Reset</button>
+          <span class="flex-grow-1"></span>
+          <button class="gm-x" data-gm-close aria-label="Collapse window">x</button>
+        </div>
+        <div class="gm-window-head">
+          <div class="gm-titlebox"><h1 class="gm-title" id="win-main-title">Home</h1><span class="gm-subtitle">: welcome to the sixth build of gunmetal os. enjoy!</span></div>
+          <div class="gm-slot ms-auto d-none d-md-inline-flex" data-gm-drop><span>Drop disk here</span><span class="gm-slot-hole"></span></div>
+        </div>
+
+        <!-- HOME -->
+        <div class="gm-window-body" id="sec-home" data-gm-group="main" data-gm-title="Home" data-gm-sub="welcome to the sixth build of gunmetal os. enjoy!">
+          <div class="row g-2">
+            <div class="col-lg-8">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">What is gunmetal os?</span>
+                <div class="gm-plate">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-sm-7">
+                      <p class="mb-2">Gunmetal OS is a Bootstrap 5 theme for building sites that feel like a 2001 Flash desktop: steel windows, floppy-disk icons, pixel type and one glowing colour you can change at any time.</p>
+                      <p class="mb-0">Everything is plain HTML with <span class="gm-hl">gm-</span> classes on top of stock Bootstrap. Grid, modals, dropdowns and forms keep working as usual.</p>
+                    </div>
+                    <div class="col-sm-5 text-sm-end">
+                      <p class="gm-display" style="color:rgba(0,0,0,.78)">Steel<br>shell for<br>flash-era<br>screens.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row g-2 mt-1">
+                  <div class="col-sm-4">
+                    <span class="gm-tag">Current feature</span>
+                    <div class="gm-well text-center">
+                      <div class="gm-plate p-1" style="font-size:var(--gm-fs-xs)">Site of<br>the day<br><b>Aug-31-2001</b></div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8">
+                    <span class="gm-tag gm-tag-plain">Build 6 notes</span>
+                    <div class="gm-well">The glow colour now drives every accent: plates, icons, LEDs, progress bars and the scrollbar. Try the swatches in the Glow panel on the right.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="gm-pane h-100 d-flex flex-column">
+                <span class="gm-tag align-self-start">News and events</span>
+                <div class="gm-well gm-scroll flex-grow-1" style="max-height:230px">
+                  <p class="mb-1 text-white-50">14/10/01</p>
+                  <p class="gm-accent mb-1">Glow switcher shipped</p>
+                  <p>Eight preset colours plus a custom picker. Your choice is remembered between visits.</p>
+                  <hr class="gm-divider">
+                  <p class="mb-1 text-white-50">02/09/01</p>
+                  <p class="gm-accent mb-1">Music panel online</p>
+                  <p>Nine looping chip tracks, a level meter and a load bar. Press off to silence them.</p>
+                  <hr class="gm-divider">
+                  <p class="mb-1 text-white-50">25/04/01</p>
+                  <p class="gm-accent mb-1">Draggable windows</p>
+                  <p class="mb-0">Grab any title strip on a desktop screen. Reset puts the window back.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KIT -->
+        <div class="gm-window-body" id="sec-kit" data-gm-group="main" data-gm-title="Kit" data-gm-sub="buttons, labels, plates and alerts." hidden>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Buttons</span>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <button class="btn btn-primary">Submit</button>
+                  <button class="btn">Default</button>
+                  <button class="btn btn-secondary">Secondary</button>
+                  <button class="btn btn-dark">Dark</button>
+                  <button class="btn btn-outline-primary">Outline</button>
+                  <button class="btn btn-danger">Delete</button>
+                  <button class="btn" disabled>Disabled</button>
+                </div>
+                <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+                  <button class="btn btn-primary btn-lg">Large</button>
+                  <button class="btn btn-sm">Small</button>
+                  <div class="btn-group" role="group" aria-label="View mode">
+                    <input type="radio" class="btn-check" name="vm" id="vm1" checked><label class="btn" for="vm1">List</label>
+                    <input type="radio" class="btn-check" name="vm" id="vm2"><label class="btn" for="vm2">Grid</label>
+                    <input type="radio" class="btn-check" name="vm" id="vm3"><label class="btn" for="vm3">Map</label>
+                  </div>
+                </div>
+                <span class="gm-tag">Micro controls</span>
+                <div class="d-flex flex-wrap gap-1 align-items-center">
+                  <button class="gm-chip">Reset</button><button class="gm-chip gm-chip-accent">Music</button>
+                  <button class="gm-x">x</button><span class="gm-grip"></span>
+                  <button class="gm-key">Track 1</button><button class="gm-key is-on">Track 2</button>
+                  <span class="gm-led"></span><span class="gm-led is-on"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Labels and badges</span>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                  <span class="gm-tag mb-0">gm-tag</span><span class="gm-tag gm-tag-solid mb-0">gm-tag-solid</span><span class="gm-tag gm-tag-plain mb-0">gm-tag-plain</span>
+                  <span class="badge text-bg-primary">New</span><span class="badge text-bg-secondary">v.6</span><span class="badge text-bg-dark">Beta</span><span class="badge text-bg-danger">Hot</span>
+                </div>
+                <span class="gm-tag">Surfaces</span>
+                <div class="row g-2 mb-2">
+                  <div class="col-4"><div class="gm-pane text-center">pane</div></div>
+                  <div class="col-4"><div class="gm-well text-center">well</div></div>
+                  <div class="col-4"><div class="gm-plate text-center">plate</div></div>
+                </div>
+                <div class="gm-screen-lcd mb-2">LCD readout: 626 kb loaded / buffer ok</div>
+                <div class="alert alert-primary mb-1">Glow alert<br>Uses the current accent colour.</div>
+                <div class="alert alert-success mb-1">Upload complete<br>3 files copied to the archive.</div>
+                <div class="alert alert-danger mb-0">Disk not found<br>Insert a disk into drive a: and press retry.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMS -->
+        <div class="gm-window-body" id="sec-forms" data-gm-group="main" data-gm-title="Forms" data-gm-sub="fields, checks, switches and sliders." hidden>
+          <div class="row g-2">
+            <div class="col-md-7">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Want to partner?</span>
+                <div class="row g-2">
+                  <div class="col-sm-6"><label class="form-label" for="f-mail">Your email</label><input class="form-control" id="f-mail" type="email" placeholder="you@studio.net"></div>
+                  <div class="col-sm-6"><label class="form-label" for="f-co">Company</label><input class="form-control" id="f-co" placeholder="Company name"></div>
+                  <div class="col-sm-6"><label class="form-label" for="f-sel">Interest</label>
+                    <select class="form-select" id="f-sel"><option>Flash site</option><option>3D intro</option><option>CD-ROM</option><option>Kiosk</option></select></div>
+                  <div class="col-sm-6"><label class="form-label" for="f-budget">Budget</label>
+                    <div class="input-group"><span class="input-group-text">GBP</span><input class="form-control" id="f-budget" placeholder="5 000"></div></div>
+                  <div class="col-12"><label class="form-label" for="f-msg">Message</label><textarea class="form-control" id="f-msg" placeholder="Tell us about the project"></textarea>
+                    <div class="form-text">We reply within two working days.</div></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2 gap-2">
+                  <input class="form-control form-control-sm" style="max-width:150px" value="Status: ready" disabled>
+                  <button class="btn btn-primary">Send request</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Options</span>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="c1" checked><label class="form-check-label" for="c1">Send me the newsletter</label></div>
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="c2"><label class="form-check-label" for="c2">Show source files</label></div>
+                <div class="form-check"><input class="form-check-input" type="radio" name="r" id="r1" checked><label class="form-check-label" for="r1">Quality</label></div>
+                <div class="form-check mb-2"><input class="form-check-input" type="radio" name="r" id="r2"><label class="form-check-label" for="r2">Speed</label></div>
+                <div class="form-check form-switch"><input class="form-check-input" type="checkbox" role="switch" id="s1" checked><label class="form-check-label" for="s1">Sound effects</label></div>
+                <div class="form-check form-switch mb-2"><input class="form-check-input" type="checkbox" role="switch" id="s2"><label class="form-check-label" for="s2">Autoplay intro</label></div>
+                <label class="form-label" for="rg">Volume</label><input type="range" class="form-range" id="rg" value="60">
+                <label class="form-label mt-1" for="ff">Attach file</label><input class="form-control form-control-sm" type="file" id="ff">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DATA -->
+        <div class="gm-window-body" id="sec-data" data-gm-group="main" data-gm-title="Data" data-gm-sub="tables, lists, meters and paging." hidden>
+          <div class="row g-2">
+            <div class="col-md-8">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Clients</span>
+                <div class="table-wrap mb-2">
+                  <table class="table table-striped table-hover">
+                    <thead><tr><th>Client</th><th>Project</th><th>Tech</th><th class="text-end">Size</th></tr></thead>
+                    <tbody>
+                      <tr><td>Record book ltd</td><td>Main site</td><td>Flash 5 / XML</td><td class="text-end">1.2 mb</td></tr>
+                      <tr><td>Northline rail</td><td>Kiosk</td><td>Director 8</td><td class="text-end">640 kb</td></tr>
+                      <tr class="table-active"><td>Kestrel audio</td><td>Promo CD</td><td>Flash / MP3</td><td class="text-end">48 mb</td></tr>
+                      <tr><td>Harbour bank</td><td>Intranet</td><td>ASP / HTML</td><td class="text-end">310 kb</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap gap-2 align-items-center">
+                  <ol class="breadcrumb"><li class="breadcrumb-item"><a href="#">Home</a></li><li class="breadcrumb-item"><a href="#">Clients</a></li><li class="breadcrumb-item active">2001</li></ol>
+                  <ul class="pagination mb-0"><li class="page-item disabled"><span class="page-link">&lt;</span></li><li class="page-item active"><a class="page-link" href="#">1</a></li><li class="page-item"><a class="page-link" href="#">2</a></li><li class="page-item"><a class="page-link" href="#">3</a></li><li class="page-item"><a class="page-link" href="#">&gt;</a></li></ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Downloads</span>
+                <div class="list-group mb-2">
+                  <a href="#" class="list-group-item list-group-item-action active">Showreel_2001.swf</a>
+                  <a href="#" class="list-group-item list-group-item-action">Brochure.pdf</a>
+                  <a href="#" class="list-group-item list-group-item-action">Wallpapers.zip</a>
+                </div>
+                <span class="gm-tag">Loading</span>
+                <div class="progress mb-2" role="progressbar" aria-label="Loading" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:68%"></div></div>
+                <div class="progress mb-2" role="progressbar" aria-label="Buffer" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-secondary" style="width:35%"></div></div>
+                <div class="d-flex gap-2 align-items-end">
+                  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.7"></div></div>
+                  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.45"></div></div>
+                  <div class="gm-vu-frame"><div class="gm-vu" style="--gm-level:.85"></div></div>
+                  <div class="gm-screen-lcd flex-grow-1">CPU 68%<br>RAM 128 mb</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="gm-window-body" id="sec-windows" data-gm-group="main" data-gm-title="Windows" data-gm-sub="modal, tabs, menus, accordion, toast." hidden>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Overlays</span>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#gm-modal">Open modal</button>
+                  <div class="dropdown">
+                    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">File</button>
+                    <ul class="dropdown-menu"><li><h6 class="dropdown-header">Project</h6></li><li><a class="dropdown-item" href="#">New</a></li><li><a class="dropdown-item" href="#">Open...</a></li><li><a class="dropdown-item active" href="#">Save</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Exit</a></li></ul>
+                  </div>
+                  <button class="btn" data-gm-toast-show="#gm-toast">Show toast</button>
+                  <button class="btn btn-dark" data-bs-toggle="tooltip" data-bs-title="Tooltips use the glow colour">Hover me</button>
+                </div>
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t1" role="tab">Skills</button></li>
+                  <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t2" role="tab">Clients</button></li>
+                  <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t3" role="tab">Case</button></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane show active" id="t1" role="tabpanel">Flash 5, Swift 3D, 3D Studio Max, ASP and hand-written HTML.</div>
+                  <div class="tab-pane" id="t2" role="tabpanel">Record labels, rail operators, banks and one very patient museum.</div>
+                  <div class="tab-pane" id="t3" role="tabpanel">A database-driven site built entirely in Flash, fed by XML.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Accordion</span>
+                <div class="accordion" id="acc">
+                  <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#a1">How do I change the glow?</button></h2>
+                    <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#acc"><div class="accordion-body">Set data-gm-accent on the html tag, or call GM.setAccent('cyan').</div></div></div>
+                  <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a2">Can windows be dragged?</button></h2>
+                    <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">Yes, inside a .gm-draggable container on screens 992px and wider.</div></div></div>
+                  <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#a3">Does it need Flash?</button></h2>
+                    <div id="a3" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">No. It only looks like it does.</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEAM -->
+        <div class="gm-window-body" id="sec-team" data-gm-group="main" data-gm-title="Team" data-gm-sub="mug shots of the people behind the work." hidden>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="gm-pane">
+                <span class="gm-tag">Neville : director / new media designer</span>
+                <div class="d-flex gap-2">
+                  <div class="gm-plate flex-grow-1" style="font-size:var(--gm-fs-xs)">After a degree in software systems for the arts, Neville spent two years building Flash and 3D sites for large consultancies, then started the studio. His goal is to take the fear out of new web technology.</div>
+                  <div class="gm-well p-1 flex-shrink-0" style="width:64px"><div class="gm-media" style="height:64px"><svg viewBox="0 0 64 64" width="100%" height="100%"><rect width="64" height="64" fill="var(--gm-accent)"/><circle cx="32" cy="24" r="11" fill="#151515"/><path d="M8 64c2-16 12-24 24-24s22 8 24 24z" fill="#151515"/></svg></div></div>
+                </div>
+              </div>
+              <div class="gm-pane mt-2"><div class="gm-well">"As a new studio we are growing the team so we can take on bigger projects and ship them faster."</div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="gm-pane">
+                <span class="gm-tag">Nadia : web designer / office guru</span>
+                <div class="d-flex gap-2">
+                  <div class="gm-plate flex-grow-1" style="font-size:var(--gm-fs-xs)">Nadia joined as a trainee designer and now runs the office. Seven years of work with large clients made her the person everyone calls when a deadline moves.</div>
+                  <div class="gm-well p-1 flex-shrink-0" style="width:64px"><div class="gm-media" style="height:64px"><svg viewBox="0 0 64 64" width="100%" height="100%"><rect width="64" height="64" fill="var(--gm-accent)"/><path d="M18 36c-4-18 6-26 14-26s18 8 14 26z" fill="#151515"/><circle cx="32" cy="25" r="9" fill="#2b2b2b"/><path d="M8 64c2-16 12-22 24-22s22 6 24 22z" fill="#151515"/></svg></div></div>
+                </div>
+              </div>
+              <div class="gm-pane mt-2"><div class="gm-well">"Every project here is a new challenge, and the pace keeps us sharp."</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAYOUT -->
+        <div class="gm-window-body" id="sec-layout" data-gm-group="main" data-gm-title="Layout" data-gm-sub="anatomy of a gunmetal window." hidden>
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Nesting order</span>
+                <pre>.gm-desktop
+ └ .gm-screen          steel frame
+   └ .gm-viewport      wallpaper
+     ├ .gm-logo
+     ├ .gm-workspace   grid: stage + dock
+     │ ├ .gm-stage
+     │ │ └ .gm-window
+     │ │   ├ .gm-window-bar
+     │ │   ├ .gm-window-head
+     │ │   └ .gm-window-body
+     │ │     └ .gm-pane > .gm-well / .gm-plate
+     │ └ .gm-dock > .gm-module
+     └ .gm-statusbar</pre>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="gm-pane h-100">
+                <span class="gm-tag">Bevel tokens</span>
+                <div class="row g-2 text-center mb-2">
+                  <div class="col-4"><div class="p-2" style="background:var(--gm-steel);box-shadow:var(--gm-raised),var(--gm-line)">raised</div></div>
+                  <div class="col-4"><div class="p-2" style="background:var(--gm-well);box-shadow:var(--gm-sunken),var(--gm-line)">sunken</div></div>
+                  <div class="col-4"><div class="p-2" style="background:var(--gm-panel);box-shadow:var(--gm-groove)">groove</div></div>
+                </div>
+                <span class="gm-tag">Steel palette</span>
+                <div class="d-flex mb-2" style="height:22px;box-shadow:var(--gm-line)">
+                  <div class="flex-fill" style="background:var(--gm-void)"></div><div class="flex-fill" style="background:var(--gm-deep)"></div><div class="flex-fill" style="background:var(--gm-well)"></div><div class="flex-fill" style="background:var(--gm-panel)"></div><div class="flex-fill" style="background:var(--gm-frame)"></div><div class="flex-fill" style="background:var(--gm-steel)"></div><div class="flex-fill" style="background:var(--gm-field)"></div><div class="flex-fill" style="background:var(--gm-hi)"></div><div class="flex-fill" style="background:var(--gm-accent)"></div>
+                </div>
+                <span class="gm-tag">Type</span>
+                <p class="mb-1" style="font-size:var(--gm-fs-xl);line-height:1">Pixel 24</p>
+                <p class="mb-1" style="font-size:var(--gm-fs-lg)">Pixel 16 title</p>
+                <p class="mb-1">Pixel 10 body copy for reading.</p>
+                <p class="mb-0" style="font-size:var(--gm-fs-xs)">Pixel 8 labels and captions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CODE -->
+        <div class="gm-window-body" id="sec-code" data-gm-group="main" data-gm-title="Code" data-gm-sub="drop the theme into any bootstrap 5.3 page." hidden>
+          <div class="gm-plate mb-2 d-flex flex-wrap align-items-center gap-2"><span>Every element with a live example and copyable markup is in the component reference.</span><a class="btn btn-dark btn-sm ms-auto" href="docs.html">Open components</a></div>
+          <div class="gm-pane mb-2">
+            <span class="gm-tag">1. Load</span>
+<pre>&lt;html data-gm-accent="orange"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Saira+Condensed:wght@800&amp;display=swap" rel="stylesheet"&gt;
+&lt;link href="bootstrap.min.css" rel="stylesheet"&gt;
+&lt;link href="gunmetal.css" rel="stylesheet"&gt;
+&lt;body class="gm-os"&gt;
+...
+&lt;script src="bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;script src="gunmetal.js"&gt;&lt;/script&gt;</pre>
+          </div>
+          <div class="row g-2">
+            <div class="col-md-6"><div class="gm-pane h-100"><span class="gm-tag">2. Window</span>
+<pre>&lt;section class="gm-window"&gt;
+  &lt;div class="gm-window-bar"&gt;
+    &lt;span class="gm-grip"&gt;&lt;/span&gt;
+    &lt;button class="gm-chip" data-gm-reset&gt;Reset&lt;/button&gt;
+    &lt;span class="flex-grow-1"&gt;&lt;/span&gt;
+    &lt;button class="gm-x" data-gm-close&gt;x&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="gm-window-head"&gt;
+    &lt;div class="gm-titlebox"&gt;
+      &lt;h2 class="gm-title"&gt;Team&lt;/h2&gt;
+      &lt;span class="gm-subtitle"&gt;: who we are&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="gm-window-body"&gt;...&lt;/div&gt;
+&lt;/section&gt;</pre></div></div>
+            <div class="col-md-6"><div class="gm-pane h-100"><span class="gm-tag">3. Glow</span>
+<pre>&lt;!-- presets --&gt;
+orange amber lime cyan
+ice magenta red chalk
+
+&lt;button data-gm-accent-set="cyan"&gt;
+&lt;input type="color" data-gm-accent-custom&gt;
+
+// JS
+GM.setAccent('lime');
+GM.setAccent('#ff2266');
+GM.setWall('night');
+GM.setText('large');
+GM.setFx(false);</pre></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- floating monitor -->
+      <section class="gm-window gm-window-float" aria-label="Monitor">
+        <div class="gm-window-bar"><span class="gm-grip"></span><span class="flex-grow-1"></span><button class="gm-x" data-gm-close aria-label="Collapse monitor">x</button></div>
+        <div class="mt-1"><span class="gm-tag">Creative display</span></div>
+        <div class="gm-well p-1 d-flex gap-1">
+          <div class="gm-media flex-fill" style="height:96px">
+            <svg viewBox="0 0 120 96" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"><rect width="120" height="96" fill="var(--gm-accent)"/>
+              <g fill="none" stroke="#111" stroke-width="1.2"><circle cx="20" cy="92" r="84"/><circle cx="20" cy="92" r="70"/><circle cx="20" cy="92" r="56"/>
+              <path d="M20 92L104 92M20 92L98 60M20 92L80 32M20 92L59 17M20 92L36 9M20 92L20 8M20 92L96 47M20 92L70 24"/></g></svg>
+          </div>
+          <div class="gm-media flex-fill" style="height:96px"><canvas data-gm-wire style="width:100%;height:100%;display:block"></canvas></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═════════ DOCK ═════════ -->
+    <aside class="gm-dock" aria-label="System panels">
+      <div class="gm-module"><div class="gm-module-head"><a class="gm-chip gm-chip-accent text-decoration-none" href="docs.html">Components</a><button class="gm-chip" data-gm-action="shutdown">Exit gunmetal os</button></div></div>
+
+      <div class="gm-module">
+        <div class="gm-module-head"><span class="gm-tag">Client area login</span><button class="gm-chip">Submit</button></div>
+        <div class="gm-module-body">
+          <div class="gm-fieldrow"><label for="u">User name</label><input class="form-control" id="u" autocomplete="off"></div>
+          <div class="gm-fieldrow mb-0"><label for="p">Password</label><input class="form-control" id="p" type="password"></div>
+        </div>
+      </div>
+
+      <div class="gm-module">
+        <div class="gm-module-head">
+          <div class="d-flex gap-1"><button class="gm-chip gm-chip-accent" data-gm-action="music-toggle">Music</button><button class="gm-chip gm-chip-accent" data-gm-action="glow-cycle">Glow</button><button class="gm-chip" data-gm-reset="all">Reset</button></div>
+          <span class="gm-grip" style="flex-basis:24px"></span>
+        </div>
+        <nav class="gm-iconbar mt-1" aria-label="Sections">
+          <button class="gm-icon is-active" data-gm-target="#sec-home"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Home</span></button>
+          <button class="gm-icon" data-gm-target="#sec-kit"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Kit</span></button>
+          <button class="gm-icon" data-gm-target="#sec-forms"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Forms</span></button>
+          <button class="gm-icon" data-gm-target="#sec-data"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Data</span></button>
+          <button class="gm-icon" data-gm-target="#sec-windows"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Wins</span></button>
+          <button class="gm-icon" data-gm-target="#sec-team"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Team</span></button>
+          <button class="gm-icon" data-gm-target="#sec-layout"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Layout</span></button>
+          <button class="gm-icon" data-gm-target="#sec-code"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Code</span></button>
+          <button class="gm-icon" data-gm-action="glow-cycle"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Glow</span></button>
+          <button class="gm-icon" data-gm-action="music-toggle"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Music</span></button>
+          <button class="gm-icon" data-bs-toggle="modal" data-bs-target="#gm-modal"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Help</span></button>
+          <button class="gm-icon" data-gm-action="shutdown"><span class="gm-icon-tile"><svg><use href="#gm-floppy"/></svg></span><span class="gm-icon-label">Exit</span></button>
+        </nav>
+      </div>
+
+      <div class="gm-module">
+        <div class="gm-module-head"><span class="gm-tag">Music <span class="gm-led ms-1" data-gm-music-led></span></span><button class="gm-x" data-gm-close aria-label="Collapse music">x</button></div>
+        <div class="gm-module-body">
+          <div class="d-flex gap-1">
+            <div class="gm-keys flex-grow-1" style="grid-template-columns:repeat(3,1fr)">
+              <button class="gm-key" data-gm-track="0">Track 1</button><button class="gm-key" data-gm-track="3">Track 4</button><button class="gm-key" data-gm-track="6">Track 7</button>
+              <button class="gm-key" data-gm-track="1">Track 2</button><button class="gm-key" data-gm-track="4">Track 5</button><button class="gm-key" data-gm-track="7">Track 8</button>
+              <button class="gm-key" data-gm-track="2">Track 3</button><button class="gm-key" data-gm-track="5">Track 6</button><button class="gm-key" data-gm-track="8">Track 9</button>
+            </div>
+            <div class="gm-vu-frame"><div class="gm-vu"></div></div>
+          </div>
+          <div class="d-flex gap-1 mt-1 align-items-stretch">
+            <div class="d-flex flex-column gap-1" style="flex:0 0 108px">
+              <div class="d-flex gap-1"><button class="gm-key" data-gm-action="music-off">Off</button><span class="gm-key flex-grow-1 text-center">Load track</span></div>
+              <div class="progress" style="--bs-progress-height:8px"><div class="progress-bar" data-gm-music-pos style="width:0%"></div></div>
+            </div>
+            <div class="gm-screen-lcd flex-grow-1" data-gm-music-readout style="font-size:calc(7px*var(--gm-scale));line-height:1.35">Music off<br>Pick a track</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gm-module">
+        <div class="gm-module-head"><span class="gm-tag">View</span><button class="gm-x" data-gm-close aria-label="Collapse view">x</button></div>
+        <div class="gm-module-body">
+          <div class="d-flex gap-1 mb-1">
+            <div class="flex-grow-1">
+              <div class="gm-key mb-1" data-gm-wall-name style="cursor:default">Sea - sunrise</div>
+              <div class="gm-thumbs" style="grid-template-columns:repeat(3,1fr)">
+                <button class="gm-thumb gm-wall-sunrise" data-gm-wall-set="sunrise" aria-label="Sea sunrise"></button>
+                <button class="gm-thumb gm-wall-overcast" data-gm-wall-set="overcast" aria-label="Overcast"></button>
+                <button class="gm-thumb gm-wall-night" data-gm-wall-set="night" aria-label="Night grid"></button>
+                <button class="gm-thumb gm-wall-arctic" data-gm-wall-set="arctic" aria-label="Arctic"></button>
+                <button class="gm-thumb gm-wall-desert" data-gm-wall-set="desert" aria-label="Desert"></button>
+                <button class="gm-thumb gm-wall-studio" data-gm-wall-set="studio" aria-label="Studio"></button>
+              </div>
+            </div>
+            <div class="gm-preview gm-wall-sunrise" data-gm-wall-preview style="flex:0 0 62px;align-self:flex-end"></div>
+          </div>
+          <div class="d-flex gap-1"><button class="gm-key" data-gm-wall-set="studio">Off</button><button class="gm-key flex-grow-1" data-gm-action="wall-load">Load image</button><button class="gm-key" data-gm-close>Done</button></div>
+          <input type="file" accept="image/*" data-gm-wall-file hidden>
+        </div>
+      </div>
+
+      <div class="gm-module">
+        <div class="gm-module-head"><span class="gm-tag">Glow : <span data-gm-accent-name>orange</span></span><button class="gm-x" data-gm-close aria-label="Collapse glow">x</button></div>
+        <div class="gm-module-body">
+          <div class="gm-swatches mb-1">
+            <button class="gm-swatch" style="--sw:#ff6b1a" data-gm-accent-set="orange" aria-label="Orange"></button>
+            <button class="gm-swatch" style="--sw:#ffb000" data-gm-accent-set="amber" aria-label="Amber"></button>
+            <button class="gm-swatch" style="--sw:#a6e22e" data-gm-accent-set="lime" aria-label="Lime"></button>
+            <button class="gm-swatch" style="--sw:#2fd6f0" data-gm-accent-set="cyan" aria-label="Cyan"></button>
+            <button class="gm-swatch" style="--sw:#7fa9ff" data-gm-accent-set="ice" aria-label="Ice"></button>
+            <button class="gm-swatch" style="--sw:#ff4fb0" data-gm-accent-set="magenta" aria-label="Magenta"></button>
+            <button class="gm-swatch" style="--sw:#ff4033" data-gm-accent-set="red" aria-label="Red"></button>
+            <button class="gm-swatch" style="--sw:#e2e2d6" data-gm-accent-set="chalk" aria-label="Chalk"></button>
+          </div>
+          <label class="d-flex align-items-center gap-2" style="font-size:var(--gm-fs-xs)">Custom <input type="color" value="#ff6b1a" data-gm-accent-custom style="width:40px;height:14px;padding:0;border:0;background:none;box-shadow:var(--gm-line)"></label>
+        </div>
+      </div>
+
+      <div class="gm-module">
+        <div class="gm-module-head"><span class="gm-tag">Quality</span><button class="gm-x" data-gm-close aria-label="Collapse quality">x</button></div>
+        <div class="gm-module-body">
+          <p class="mb-1" style="font-size:var(--gm-fs-xs);line-height:1.6">Performance options. Speed turns off scanlines, grain and animation.</p>
+          <div class="gm-well p-1 mb-1 d-flex gap-2 align-items-center" style="font-size:var(--gm-fs-xs)">Effects
+            <div class="form-check mb-0 ms-auto"><input class="form-check-input" type="radio" name="fx" id="fxq" data-gm-fx-set="quality"><label class="form-check-label" for="fxq">Quality</label></div>
+            <div class="form-check mb-0"><input class="form-check-input" type="radio" name="fx" id="fxs" data-gm-fx-set="speed"><label class="form-check-label" for="fxs">Speed</label></div>
+          </div>
+          <div class="gm-well p-1 d-flex gap-2 align-items-center" style="font-size:var(--gm-fs-xs)">Text
+            <div class="form-check mb-0 ms-auto"><input class="form-check-input" type="radio" name="tx" id="txn" data-gm-text-set="normal"><label class="form-check-label" for="txn">Small</label></div>
+            <div class="form-check mb-0"><input class="form-check-input" type="radio" name="tx" id="txl" data-gm-text-set="large"><label class="form-check-label" for="txl">Large</label></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="gm-statusbar"><span>&copy; Gunmetal 2001</span><span>V.6</span><a href="docs.html">Components</a><span data-gm-clock>--:--</span></div>
+</div>
+</div>
+</div>
+
+<!-- modal -->
+<div class="modal fade" id="gm-modal" tabindex="-1" aria-labelledby="gm-modal-title" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><span class="gm-grip me-2"></span><h2 class="modal-title me-auto" id="gm-modal-title">Help</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+      <div class="modal-body">
+        <p>Click a floppy icon to open a section. Drag windows by their title strip. Pick a glow colour, wallpaper and text size on the right; they are saved for your next visit.</p>
+        <p class="mb-0">Drop an image on the slot next to the window title to use it as wallpaper.</p>
+      </div>
+      <div class="modal-footer"><button class="btn" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary" data-bs-dismiss="modal">Got it</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div class="toast" id="gm-toast" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-header"><span class="gm-led is-on me-2"></span><strong class="me-auto">System</strong><small class="me-2">now</small><button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button></div>
+    <div class="toast-body">Showreel_2001.swf saved to drive c:</div>
+  </div>
+</div>
+
+<!-- shutdown -->
+<div class="gm-shutdown" data-gm-action="boot" role="dialog" aria-label="Shut down screen">
+  <div>It is now safe to turn off<br>your computer.<br><br><span class="gm-blink">Click to restart_</span></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="gunmetal.js"></script>
+</body>
+</html>
